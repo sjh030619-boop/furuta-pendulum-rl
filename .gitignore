@@ -8,4 +8,6 @@ app/dist/
 app/src_backup_*/
 s2r/pi_mirror_*/
 *.zip
+!rl/**/*.zip
+!s2r/**/*.zip
 *.exe
