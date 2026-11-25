@@ -1,0 +1,23 @@
+{
+ "Fc_pos": 0.7949713413135314,
+ "Fc_neg": 0.7865710524522646,
+ "viscous": 0.14511538749007266,
+ "resid_rms": 0.02480590023478635,
+ "points": [],
+ "seconds": 0.0,
+ "s_inertia": 4.476068604606746,
+ "comp_J": 0.0232,
+ "iq_max": 120,
+ "tau": 1.0,
+ "brake_plim": 5.0,
+ "brake_zone_deg": 20.0,
+ "log_voltage": false,
+ "settle_deg": null,
+ "fric_info": {
+  "source": "file",
+  "file": "pi_host/logs/kit_params_latest.json",
+  "reason": "재사용: 측정 2026-11-24 18:39:24 (12.1분 전), 온도 38→40°C",
+  "temp_now": 40,
+  "t_to_policy_s": 2.38
+ }
+}

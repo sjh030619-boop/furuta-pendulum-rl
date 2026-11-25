@@ -1,0 +1,23 @@
+{
+ "reward": "(바탕 정책)",
+ "gate128": 128,
+ "per": {
+  "nom": 16,
+  "J_lo": 16,
+  "J_hi": 16,
+  "fric_lo": 16,
+  "fric_hi": 16,
+  "k_lo": 16,
+  "k_hi": 16,
+  "kt_lat": 16
+ },
+ "behavior": {
+  "stood": 8,
+  "t_up_med": 2.59,
+  "hold_iq": 0.40739800000000004,
+  "hold_arm_speed": 0.9793608515740762,
+  "arm_drift": 9.553323799183127,
+  "effort": 0.26274618270337324,
+  "safety_stops": 0
+ }
+}

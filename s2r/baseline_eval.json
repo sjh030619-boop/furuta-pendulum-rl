@@ -1,0 +1,122 @@
+{
+ "orig_direct": {
+  "nom": {
+   "strict": 0,
+   "loose": 0,
+   "t_hold_med": null,
+   "ret": 83.33287352392496,
+   "terminated": 0
+  },
+  "J_lo": {
+   "strict": 0,
+   "loose": 0,
+   "t_hold_med": null,
+   "ret": 106.74548121067892,
+   "terminated": 0
+  },
+  "J_hi": {
+   "strict": 0,
+   "loose": 0,
+   "t_hold_med": null,
+   "ret": 77.93537998110085,
+   "terminated": 0
+  },
+  "fric_lo": {
+   "strict": 0,
+   "loose": 0,
+   "t_hold_med": null,
+   "ret": 229.79007595659556,
+   "terminated": 0
+  },
+  "fric_hi": {
+   "strict": 0,
+   "loose": 0,
+   "t_hold_med": null,
+   "ret": 57.347671352504264,
+   "terminated": 0
+  },
+  "k_lo": {
+   "strict": 0,
+   "loose": 0,
+   "t_hold_med": null,
+   "ret": 78.61908885725978,
+   "terminated": 0
+  },
+  "k_hi": {
+   "strict": 0,
+   "loose": 0,
+   "t_hold_med": null,
+   "ret": 118.7649517316006,
+   "terminated": 0
+  },
+  "kt_lat": {
+   "strict": 0,
+   "loose": 0,
+   "t_hold_med": null,
+   "ret": 91.30274494010958,
+   "terminated": 0
+  },
+  "total_strict": 0,
+  "total_loose": 0
+ },
+ "orig_bridge": {
+  "nom": {
+   "strict": 13,
+   "loose": 15,
+   "t_hold_med": 2.82,
+   "ret": 671.2716567903132,
+   "terminated": 0
+  },
+  "J_lo": {
+   "strict": 13,
+   "loose": 14,
+   "t_hold_med": 1.8800000000000001,
+   "ret": 692.2078397360129,
+   "terminated": 0
+  },
+  "J_hi": {
+   "strict": 15,
+   "loose": 16,
+   "t_hold_med": 4.5200000000000005,
+   "ret": 660.25067164543,
+   "terminated": 0
+  },
+  "fric_lo": {
+   "strict": 16,
+   "loose": 16,
+   "t_hold_med": 1.6400000000000001,
+   "ret": 742.6428487266265,
+   "terminated": 0
+  },
+  "fric_hi": {
+   "strict": 13,
+   "loose": 13,
+   "t_hold_med": 4.16,
+   "ret": 503.3323901317921,
+   "terminated": 0
+  },
+  "k_lo": {
+   "strict": 16,
+   "loose": 16,
+   "t_hold_med": 3.27,
+   "ret": 664.593902667497,
+   "terminated": 0
+  },
+  "k_hi": {
+   "strict": 15,
+   "loose": 15,
+   "t_hold_med": 1.8800000000000001,
+   "ret": 707.1346878095467,
+   "terminated": 0
+  },
+  "kt_lat": {
+   "strict": 14,
+   "loose": 16,
+   "t_hold_med": 4.630000000000001,
+   "ret": 655.2460113032229,
+   "terminated": 0
+  },
+  "total_strict": 115,
+  "total_loose": 121
+ }
+}

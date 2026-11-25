@@ -1,0 +1,52 @@
+{
+ "algo": "sac",
+ "seed": 0,
+ "device": "cpu",
+ "n_envs": 8,
+ "budget": 30.0,
+ "train_time": 30.004659899976104,
+ "total_wall": 30.39846039999975,
+ "steps": 31336,
+ "gamma": 0.99,
+ "net": [
+  64,
+  64
+ ],
+ "armature": 0.005,
+ "task": "swingup",
+ "ctrl_hz": 50.0,
+ "timestep": 0.002,
+ "decim": 10,
+ "episode_steps": 250,
+ "tag": "gs2",
+ "setup_time": 4.07,
+ "calib_ms_before": 28.6,
+ "calib_ms_after": 27.4,
+ "own_cpu_share": 1.0,
+ "fps": 1044,
+ "threads": 1,
+ "kw_patch": {
+  "gradient_steps": 2
+ },
+ "vec": "dummy",
+ "points": [
+  {
+   "ret": -325.92930906389313,
+   "ret_min": -333.25325815702695,
+   "upright": 0.0,
+   "settled": 0.0,
+   "success": 0.0,
+   "t": 0.0,
+   "steps": 0
+  },
+  {
+   "ret": 298.6407519895586,
+   "ret_min": 297.9715303848531,
+   "upright": 0.8512000000000001,
+   "settled": 1.0,
+   "success": 1.0,
+   "t": 30.005,
+   "steps": 31336
+  }
+ ]
+}

@@ -1,0 +1,298 @@
+{
+ "algo": "sac",
+ "seed": 2,
+ "budget": 1500.0,
+ "setup_s": 4.0,
+ "train_s": 1500.0,
+ "eval_s": 117.8,
+ "steps": 1787320,
+ "fps": 1191,
+ "calib_ms_before": 55.9,
+ "calib_ms_after": 32.1,
+ "t_pass": 120.0,
+ "t_sust": 120.0,
+ "min_after_pass": 7,
+ "final_full": {
+  "nom": {
+   "strict": 16,
+   "loose": 16,
+   "t_hold_med": 3.2,
+   "ret": 578.8264226314018,
+   "terminated": 0
+  },
+  "J_lo": {
+   "strict": 16,
+   "loose": 16,
+   "t_hold_med": 3.12,
+   "ret": 581.1055015956468,
+   "terminated": 0
+  },
+  "J_hi": {
+   "strict": 16,
+   "loose": 16,
+   "t_hold_med": 3.18,
+   "ret": 578.1706144497841,
+   "terminated": 0
+  },
+  "fric_lo": {
+   "strict": 16,
+   "loose": 16,
+   "t_hold_med": 2.1,
+   "ret": 693.1022558893416,
+   "terminated": 0
+  },
+  "fric_hi": {
+   "strict": 15,
+   "loose": 16,
+   "t_hold_med": 6.34,
+   "ret": 301.90464960501106,
+   "terminated": 0
+  },
+  "k_lo": {
+   "strict": 16,
+   "loose": 16,
+   "t_hold_med": 3.37,
+   "ret": 556.6517676982212,
+   "terminated": 0
+  },
+  "k_hi": {
+   "strict": 16,
+   "loose": 16,
+   "t_hold_med": 2.68,
+   "ret": 623.7196524252606,
+   "terminated": 0
+  },
+  "kt_lat": {
+   "strict": 16,
+   "loose": 16,
+   "t_hold_med": 3.2,
+   "ret": 563.871346985162,
+   "terminated": 0
+  },
+  "total_strict": 127,
+  "total_loose": 128
+ },
+ "points": [
+  {
+   "t": 0.0,
+   "steps": 0,
+   "strict": 0,
+   "loose": 0,
+   "ret": -1143.5,
+   "term": 0
+  },
+  {
+   "t": 60.0,
+   "steps": 68896,
+   "strict": 8,
+   "loose": 11,
+   "ret": 215.8,
+   "term": 0
+  },
+  {
+   "t": 120.0,
+   "steps": 138464,
+   "strict": 16,
+   "loose": 16,
+   "ret": 525.1,
+   "term": 0
+  },
+  {
+   "t": 180.0,
+   "steps": 204928,
+   "strict": 16,
+   "loose": 16,
+   "ret": 606.1,
+   "term": 0
+  },
+  {
+   "t": 240.0,
+   "steps": 275472,
+   "strict": 16,
+   "loose": 16,
+   "ret": 601.3,
+   "term": 0
+  },
+  {
+   "t": 300.0,
+   "steps": 346272,
+   "strict": 16,
+   "loose": 16,
+   "ret": 618.2,
+   "term": 0
+  },
+  {
+   "t": 360.0,
+   "steps": 421064,
+   "strict": 16,
+   "loose": 16,
+   "ret": 662.2,
+   "term": 0
+  },
+  {
+   "t": 420.0,
+   "steps": 492664,
+   "strict": 7,
+   "loose": 16,
+   "ret": 656.9,
+   "term": 0
+  },
+  {
+   "t": 480.0,
+   "steps": 559552,
+   "strict": 8,
+   "loose": 16,
+   "ret": 635.3,
+   "term": 0
+  },
+  {
+   "t": 540.0,
+   "steps": 627992,
+   "strict": 16,
+   "loose": 16,
+   "ret": 643.6,
+   "term": 0
+  },
+  {
+   "t": 600.0,
+   "steps": 696648,
+   "strict": 16,
+   "loose": 16,
+   "ret": 640.8,
+   "term": 0
+  },
+  {
+   "t": 660.0,
+   "steps": 765640,
+   "strict": 16,
+   "loose": 16,
+   "ret": 624.9,
+   "term": 0
+  },
+  {
+   "t": 720.1,
+   "steps": 835560,
+   "strict": 16,
+   "loose": 16,
+   "ret": 633.8,
+   "term": 0
+  },
+  {
+   "t": 780.1,
+   "steps": 905280,
+   "strict": 16,
+   "loose": 16,
+   "ret": 636.1,
+   "term": 0
+  },
+  {
+   "t": 840.1,
+   "steps": 975232,
+   "strict": 16,
+   "loose": 16,
+   "ret": 616.6,
+   "term": 0
+  },
+  {
+   "t": 900.1,
+   "steps": 1045144,
+   "strict": 16,
+   "loose": 16,
+   "ret": 612.1,
+   "term": 0
+  },
+  {
+   "t": 960.1,
+   "steps": 1115664,
+   "strict": 16,
+   "loose": 16,
+   "ret": 620.9,
+   "term": 0
+  },
+  {
+   "t": 1020.1,
+   "steps": 1189360,
+   "strict": 16,
+   "loose": 16,
+   "ret": 632.0,
+   "term": 0
+  },
+  {
+   "t": 1080.1,
+   "steps": 1264632,
+   "strict": 16,
+   "loose": 16,
+   "ret": 606.6,
+   "term": 0
+  },
+  {
+   "t": 1140.1,
+   "steps": 1339360,
+   "strict": 16,
+   "loose": 16,
+   "ret": 602.0,
+   "term": 0
+  },
+  {
+   "t": 1200.1,
+   "steps": 1413864,
+   "strict": 16,
+   "loose": 16,
+   "ret": 601.6,
+   "term": 0
+  },
+  {
+   "t": 1260.1,
+   "steps": 1488312,
+   "strict": 16,
+   "loose": 16,
+   "ret": 605.7,
+   "term": 0
+  },
+  {
+   "t": 1320.1,
+   "steps": 1563328,
+   "strict": 16,
+   "loose": 16,
+   "ret": 599.0,
+   "term": 0
+  },
+  {
+   "t": 1380.1,
+   "steps": 1637696,
+   "strict": 16,
+   "loose": 16,
+   "ret": 600.8,
+   "term": 0
+  },
+  {
+   "t": 1440.1,
+   "steps": 1712760,
+   "strict": 16,
+   "loose": 16,
+   "ret": 592.3,
+   "term": 0
+  },
+  {
+   "t": 1500.0,
+   "steps": 1787320,
+   "strict": 16,
+   "loose": 16,
+   "ret": 578.8,
+   "term": 0
+  }
+ ],
+ "config": {
+  "learning_rate": 0.001,
+  "buffer_size": 400000,
+  "batch_size": 256,
+  "tau": 0.005,
+  "train_freq": [
+   1,
+   "step"
+  ],
+  "gradient_steps": 1,
+  "learning_starts": 2000,
+  "n_envs": 8
+ }
+}

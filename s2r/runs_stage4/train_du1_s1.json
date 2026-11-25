@@ -1,0 +1,149 @@
+{
+ "du": 1.0,
+ "seed": 1,
+ "rule": "2x30",
+ "budget": 600.0,
+ "every": 30.0,
+ "stopped": "budget",
+ "t_stop": 600.0,
+ "steps": 853552,
+ "full_strict": 112,
+ "full_loose": 113,
+ "per": {
+  "nom": 16,
+  "J_lo": 16,
+  "J_hi": 16,
+  "fric_lo": 16,
+  "fric_hi": 0,
+  "k_lo": 16,
+  "k_hi": 16,
+  "kt_lat": 16
+ },
+ "eval_s": 59.1,
+ "hold_iq": 0.5675585,
+ "hold_du": 0.0459577688574791,
+ "hold_rms_deg": 0.6471241015306657,
+ "points": [
+  {
+   "t": 30.0,
+   "steps": 33480,
+   "strict": 0,
+   "eval_s": 3.5
+  },
+  {
+   "t": 60.0,
+   "steps": 71168,
+   "strict": 0,
+   "eval_s": 3.3
+  },
+  {
+   "t": 90.0,
+   "steps": 109504,
+   "strict": 0,
+   "eval_s": 2.2
+  },
+  {
+   "t": 120.0,
+   "steps": 147584,
+   "strict": 0,
+   "eval_s": 3.4
+  },
+  {
+   "t": 150.0,
+   "steps": 186448,
+   "strict": 0,
+   "eval_s": 3.4
+  },
+  {
+   "t": 180.0,
+   "steps": 224880,
+   "strict": 0,
+   "eval_s": 3.4
+  },
+  {
+   "t": 210.0,
+   "steps": 263096,
+   "strict": 0,
+   "eval_s": 3.4
+  },
+  {
+   "t": 240.0,
+   "steps": 301496,
+   "strict": 0,
+   "eval_s": 3.4
+  },
+  {
+   "t": 270.0,
+   "steps": 339776,
+   "strict": 0,
+   "eval_s": 3.3
+  },
+  {
+   "t": 300.0,
+   "steps": 376800,
+   "strict": 0,
+   "eval_s": 3.5
+  },
+  {
+   "t": 330.0,
+   "steps": 424152,
+   "strict": 0,
+   "eval_s": 2.6
+  },
+  {
+   "t": 360.0,
+   "steps": 470296,
+   "strict": 3,
+   "eval_s": 2.6
+  },
+  {
+   "t": 390.0,
+   "steps": 518624,
+   "strict": 4,
+   "eval_s": 2.6
+  },
+  {
+   "t": 420.0,
+   "steps": 566952,
+   "strict": 28,
+   "eval_s": 2.8
+  },
+  {
+   "t": 450.0,
+   "steps": 614416,
+   "strict": 28,
+   "eval_s": 2.6
+  },
+  {
+   "t": 480.0,
+   "steps": 662848,
+   "strict": 27,
+   "eval_s": 2.6
+  },
+  {
+   "t": 510.0,
+   "steps": 711856,
+   "strict": 21,
+   "eval_s": 2.5
+  },
+  {
+   "t": 540.0,
+   "steps": 760208,
+   "strict": 27,
+   "eval_s": 2.6
+  },
+  {
+   "t": 570.0,
+   "steps": 806480,
+   "strict": 15,
+   "eval_s": 2.8
+  },
+  {
+   "t": 600.0,
+   "steps": 853552,
+   "strict": 28,
+   "eval_s": 2.6
+  }
+ ],
+ "setup_s": 692.9
+}

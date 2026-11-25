@@ -1,0 +1,95 @@
+{
+ "du": 1.0,
+ "seed": 2,
+ "rule": "2x30",
+ "budget": 600.0,
+ "every": 30.0,
+ "stopped": "rule",
+ "t_stop": 330.0,
+ "steps": 424864,
+ "full_strict": 128,
+ "full_loose": 128,
+ "per": {
+  "nom": 16,
+  "J_lo": 16,
+  "J_hi": 16,
+  "fric_lo": 16,
+  "fric_hi": 16,
+  "k_lo": 16,
+  "k_hi": 16,
+  "kt_lat": 16
+ },
+ "eval_s": 34.4,
+ "hold_iq": 0.16413625,
+ "hold_du": 0.049090214878320694,
+ "hold_rms_deg": 0.2799238054241705,
+ "points": [
+  {
+   "t": 30.0,
+   "steps": 33536,
+   "strict": 0,
+   "eval_s": 3.3
+  },
+  {
+   "t": 60.0,
+   "steps": 71120,
+   "strict": 0,
+   "eval_s": 2.1
+  },
+  {
+   "t": 90.0,
+   "steps": 109336,
+   "strict": 0,
+   "eval_s": 2.4
+  },
+  {
+   "t": 120.0,
+   "steps": 147680,
+   "strict": 0,
+   "eval_s": 3.3
+  },
+  {
+   "t": 150.0,
+   "steps": 185864,
+   "strict": 0,
+   "eval_s": 3.4
+  },
+  {
+   "t": 180.0,
+   "steps": 224480,
+   "strict": 0,
+   "eval_s": 3.4
+  },
+  {
+   "t": 210.0,
+   "steps": 262704,
+   "strict": 0,
+   "eval_s": 3.4
+  },
+  {
+   "t": 240.0,
+   "steps": 301448,
+   "strict": 0,
+   "eval_s": 3.6
+  },
+  {
+   "t": 270.0,
+   "steps": 340136,
+   "strict": 28,
+   "eval_s": 3.5
+  },
+  {
+   "t": 300.0,
+   "steps": 377944,
+   "strict": 32,
+   "eval_s": 3.4
+  },
+  {
+   "t": 330.0,
+   "steps": 424864,
+   "strict": 32,
+   "eval_s": 2.6
+  }
+ ],
+ "setup_s": 399.7
+}

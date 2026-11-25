@@ -1,0 +1,20 @@
+# Pendulum Studio 키트 대기 프로그램을 부팅 때 띄우는 systemd 예시. 아직 설치하지 않았습니다.
+# 포트(--serial)를 실제 연결 방법에 맞게 고친 뒤:
+#   sudo cp kit-server.service /etc/systemd/system/ && sudo systemctl enable --now kit-server
+# 끄기: sudo systemctl disable --now kit-server      기록 보기: journalctl -u kit-server -f
+# 대기 중에는 can0 을 열지 않습니다. 실행(R)·점검(C) 명령을 받았을 때만 엽니다.
+[Unit]
+Description=Pendulum Studio kit server (protocol v2)
+After=network.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/rev11_s2r
+ExecStart=/usr/bin/python3 /home/pi/rev11_s2r/kit/kit_server.py --serial /dev/ttyUSB0
+Restart=on-failure
+RestartSec=2
+KillSignal=SIGTERM
+TimeoutStopSec=8
+
+[Install]
+WantedBy=multi-user.target

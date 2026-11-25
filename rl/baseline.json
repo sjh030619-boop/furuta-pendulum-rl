@@ -1,0 +1,44 @@
+{
+ "algo": "lqr",
+ "kind": "classical",
+ "seed": 0,
+ "device": "cpu",
+ "n_envs": 0,
+ "setup_time": 0.059,
+ "train_time": 0.0,
+ "steps": 0,
+ "fps": 0,
+ "budget": 180.0,
+ "armature": 0.005,
+ "task": "swingup",
+ "ctrl_hz": 50.0,
+ "timestep": 0.002,
+ "episode_steps": 250,
+ "tag": "classical",
+ "K": [
+  -0.37039265788993336,
+  4.909019771236362,
+  -0.1743647090605775,
+  0.45972981289566106
+ ],
+ "swingup": {
+  "sign": -1.0,
+  "kE": 40.0,
+  "phi_sw": 0.25,
+  "ald_sw": 4.0
+ },
+ "Jp": 0.00036008987597371567,
+ "mgl": 0.03769878935519999,
+ "rho": 0.9175149781787054,
+ "points": [
+  {
+   "t": 0.0,
+   "steps": 0,
+   "ret": 297.656765110076,
+   "ret_min": 297.656765110076,
+   "upright": 0.8311999999999999,
+   "settled": 1.0,
+   "success": 1.0
+  }
+ ]
+}

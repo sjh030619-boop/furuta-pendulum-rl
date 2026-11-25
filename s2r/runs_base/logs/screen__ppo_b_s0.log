@@ -1,0 +1,35 @@
+C:\Users\JH\Downloads\Furuta_rev18b_MuJoCo (2)\.venv\Lib\site-packages\stable_baselines3\ppo\ppo.py:155: UserWarning: You have specified a mini-batch size of 4096, but because the `RolloutBuffer` is of size `n_steps * n_envs = 25600`, after every 6 untruncated mini-batches, there will be a truncated mini-batch of size 1024
+We recommend using a `batch_size` that is a factor of `n_steps * n_envs`.
+Info: (n_steps=200 and n_envs=128)
+  warnings.warn(
+ppo_b_s0 t=  30.0 s  steps=  123648  빠른 평가  0/32
+ppo_b_s0 t=  60.1 s  steps=  241152  빠른 평가  0/32
+ppo_b_s0 t=  90.1 s  steps=  346624  빠른 평가  0/32
+ppo_b_s0 t= 120.1 s  steps=  464640  빠른 평가  0/32
+ppo_b_s0 t= 150.1 s  steps=  579712  빠른 평가  0/32
+ppo_b_s0 t= 180.1 s  steps=  690048  빠른 평가  0/32
+ppo_b_s0 t= 210.2 s  steps=  812544  빠른 평가  0/32
+ppo_b_s0 t= 240.2 s  steps=  924672  빠른 평가  0/32
+ppo_b_s0 t= 270.2 s  steps= 1045504  빠른 평가  0/32
+ppo_b_s0 t= 300.2 s  steps= 1172224  빠른 평가  0/32
+ppo_b_s0 t= 330.2 s  steps= 1292160  빠른 평가  0/32
+ppo_b_s0 t= 360.7 s  steps= 1408128  빠른 평가  0/32
+ppo_b_s0 t= 390.7 s  steps= 1533056  빠른 평가  0/32
+ppo_b_s0 t= 420.7 s  steps= 1651968  빠른 평가  0/32
+ppo_b_s0 t= 450.7 s  steps= 1785856  빠른 평가  0/32
+ppo_b_s0 t= 481.0 s  steps= 1920128  빠른 평가  0/32
+ppo_b_s0 t= 511.1 s  steps= 2056576  빠른 평가  0/32
+ppo_b_s0 t= 541.1 s  steps= 2216704  빠른 평가  0/32
+ppo_b_s0 t= 571.1 s  steps= 2337536  빠른 평가  0/32
+ppo_b_s0 t= 601.1 s  steps= 2459136  빠른 평가  0/32
+ppo_b_s0 t= 631.1 s  steps= 2581248  빠른 평가  0/32
+ppo_b_s0 t= 661.1 s  steps= 2720128  빠른 평가  0/32
+ppo_b_s0 t= 691.1 s  steps= 2865536  빠른 평가  0/32
+ppo_b_s0 t= 721.1 s  steps= 2980096  빠른 평가  0/32
+ppo_b_s0 t= 751.1 s  steps= 3073792  빠른 평가  0/32
+ppo_b_s0 t= 781.2 s  steps= 3199616  빠른 평가  0/32
+ppo_b_s0 t= 811.2 s  steps= 3318144  빠른 평가  0/32
+ppo_b_s0 t= 841.2 s  steps= 3440384  빠른 평가  0/32
+ppo_b_s0 t= 871.2 s  steps= 3563904  빠른 평가  0/32
+ppo_b_s0 t= 900.0 s  steps= 3679488  빠른 평가  0/32
+ppo_b_s0 끝: budget 900 s, 128칸 엄격 0 (느슨 0), 직립 |iq| 0.123 A

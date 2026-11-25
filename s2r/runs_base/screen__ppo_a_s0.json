@@ -1,0 +1,218 @@
+{
+ "cfg": "ppo_a",
+ "algo": "ppo",
+ "seed": 0,
+ "tag": "screen",
+ "budget": 900.0,
+ "stopped": "budget",
+ "t_stop": 900.0,
+ "steps": 3176712,
+ "fps": 3529,
+ "eval_s": 133.5,
+ "full_strict": 11,
+ "full_loose": 24,
+ "per": {
+  "nom": 4,
+  "J_lo": 0,
+  "J_hi": 2,
+  "fric_lo": 0,
+  "fric_hi": 0,
+  "k_lo": 1,
+  "k_hi": 2,
+  "kt_lat": 2
+ },
+ "hold_iq": 0.37210075,
+ "hold_du": 0.05393366510764961,
+ "hold_rms_deg": 41.88190052909775,
+ "points": [
+  {
+   "t": 30.0,
+   "steps": 104448,
+   "strict": 0,
+   "eval_s": 4.9
+  },
+  {
+   "t": 60.2,
+   "steps": 196632,
+   "strict": 0,
+   "eval_s": 3.7
+  },
+  {
+   "t": 90.4,
+   "steps": 294936,
+   "strict": 0,
+   "eval_s": 5.2
+  },
+  {
+   "t": 120.5,
+   "steps": 398880,
+   "strict": 0,
+   "eval_s": 5.1
+  },
+  {
+   "t": 150.5,
+   "steps": 485400,
+   "strict": 0,
+   "eval_s": 3.8
+  },
+  {
+   "t": 180.5,
+   "steps": 589848,
+   "strict": 0,
+   "eval_s": 5.5
+  },
+  {
+   "t": 210.5,
+   "steps": 694080,
+   "strict": 0,
+   "eval_s": 5.6
+  },
+  {
+   "t": 240.5,
+   "steps": 780960,
+   "strict": 0,
+   "eval_s": 4.1
+  },
+  {
+   "t": 270.5,
+   "steps": 894048,
+   "strict": 0,
+   "eval_s": 4.9
+  },
+  {
+   "t": 300.5,
+   "steps": 999792,
+   "strict": 0,
+   "eval_s": 4.9
+  },
+  {
+   "t": 330.7,
+   "steps": 1093656,
+   "strict": 1,
+   "eval_s": 3.1
+  },
+  {
+   "t": 360.7,
+   "steps": 1204536,
+   "strict": 0,
+   "eval_s": 4.7
+  },
+  {
+   "t": 390.8,
+   "steps": 1314840,
+   "strict": 0,
+   "eval_s": 5.2
+  },
+  {
+   "t": 420.8,
+   "steps": 1415928,
+   "strict": 0,
+   "eval_s": 3.7
+  },
+  {
+   "t": 450.8,
+   "steps": 1533048,
+   "strict": 0,
+   "eval_s": 3.9
+  },
+  {
+   "t": 480.8,
+   "steps": 1648488,
+   "strict": 0,
+   "eval_s": 3.8
+  },
+  {
+   "t": 510.8,
+   "steps": 1763928,
+   "strict": 0,
+   "eval_s": 3.8
+  },
+  {
+   "t": 540.8,
+   "steps": 1903656,
+   "strict": 0,
+   "eval_s": 3.2
+  },
+  {
+   "t": 570.8,
+   "steps": 2014488,
+   "strict": 1,
+   "eval_s": 4.7
+  },
+  {
+   "t": 600.8,
+   "steps": 2114736,
+   "strict": 4,
+   "eval_s": 3.7
+  },
+  {
+   "t": 630.8,
+   "steps": 2223576,
+   "strict": 3,
+   "eval_s": 4.4
+  },
+  {
+   "t": 661.1,
+   "steps": 2340888,
+   "strict": 4,
+   "eval_s": 3.6
+  },
+  {
+   "t": 691.1,
+   "steps": 2467848,
+   "strict": 7,
+   "eval_s": 3.7
+  },
+  {
+   "t": 721.2,
+   "steps": 2574360,
+   "strict": 0,
+   "eval_s": 6.0
+  },
+  {
+   "t": 751.6,
+   "steps": 2654232,
+   "strict": 0,
+   "eval_s": 6.3
+  },
+  {
+   "t": 781.6,
+   "steps": 2761752,
+   "strict": 0,
+   "eval_s": 5.2
+  },
+  {
+   "t": 811.6,
+   "steps": 2863128,
+   "strict": 2,
+   "eval_s": 3.7
+  },
+  {
+   "t": 841.7,
+   "steps": 2973720,
+   "strict": 5,
+   "eval_s": 5.4
+  },
+  {
+   "t": 871.7,
+   "steps": 3074736,
+   "strict": 2,
+   "eval_s": 3.0
+  },
+  {
+   "t": 900.0,
+   "steps": 3176712,
+   "strict": 1,
+   "eval_s": 4.7
+  }
+ ],
+ "config": {
+  "n_envs": 24,
+  "std0": 1.0,
+  "n_steps": 256,
+  "batch_size": 1024,
+  "n_epochs": 10,
+  "learning_rate": 0.0003,
+  "gamma": 0.99
+ }
+}

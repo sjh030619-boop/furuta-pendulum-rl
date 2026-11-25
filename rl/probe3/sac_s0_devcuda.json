@@ -1,0 +1,52 @@
+{
+ "algo": "sac",
+ "seed": 0,
+ "device": "cuda",
+ "n_envs": 8,
+ "budget": 30.0,
+ "train_time": 30.181348699959926,
+ "total_wall": 39.503310700005386,
+ "steps": 3048,
+ "gamma": 0.99,
+ "net": [
+  64,
+  64
+ ],
+ "armature": 0.005,
+ "task": "swingup",
+ "ctrl_hz": 50.0,
+ "timestep": 0.002,
+ "decim": 10,
+ "episode_steps": 250,
+ "tag": "devcuda",
+ "setup_time": 4.66,
+ "calib_ms_before": 28.2,
+ "calib_ms_after": 27.1,
+ "own_cpu_share": 1.282,
+ "fps": 100,
+ "threads": 1,
+ "kw_patch": {
+  "gradient_steps": 1
+ },
+ "vec": "dummy",
+ "points": [
+  {
+   "ret": -325.9293135650026,
+   "ret_min": -333.2532913323587,
+   "upright": 0.0,
+   "settled": 0.0,
+   "success": 0.0,
+   "t": 0.0,
+   "steps": 0
+  },
+  {
+   "ret": -488.6810556754255,
+   "ret_min": -490.16672585576237,
+   "upright": 0.0,
+   "settled": 0.0,
+   "success": 0.0,
+   "t": 30.181,
+   "steps": 3048
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "algo": "ppo",
+ "seed": 0,
+ "device": "cpu",
+ "n_envs": 32,
+ "budget": 30.0,
+ "train_time": 30.02284700004384,
+ "total_wall": 30.40078969998285,
+ "steps": 196640,
+ "gamma": 0.99,
+ "net": [
+  64,
+  64
+ ],
+ "armature": 0.005,
+ "task": "swingup",
+ "ctrl_hz": 50.0,
+ "timestep": 0.002,
+ "decim": 10,
+ "episode_steps": 250,
+ "tag": "vdummy32",
+ "setup_time": 4.68,
+ "calib_ms_before": 28.5,
+ "calib_ms_after": 28.1,
+ "own_cpu_share": 1.004,
+ "fps": 6549,
+ "threads": 1,
+ "kw_patch": null,
+ "vec": "dummy",
+ "points": [
+  {
+   "ret": -488.56777086431583,
+   "ret_min": -490.1788149945759,
+   "upright": 0.0,
+   "settled": 0.0,
+   "success": 0.0,
+   "t": 0.0,
+   "steps": 0
+  },
+  {
+   "ret": -144.27484312531968,
+   "ret_min": -146.94223810476592,
+   "upright": 0.0,
+   "settled": 0.0,
+   "success": 0.0,
+   "t": 30.023,
+   "steps": 196640
+  }
+ ]
+}

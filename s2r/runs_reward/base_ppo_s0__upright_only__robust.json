@@ -1,0 +1,83 @@
+{
+ "base": "base_ppo_s0",
+ "reward": "upright_only",
+ "name": "섰으면 1점",
+ "kind": "good",
+ "mode": "robust",
+ "gate128": 119,
+ "per": {
+  "nom": 16,
+  "J_lo": 16,
+  "J_hi": 16,
+  "fric_lo": 16,
+  "fric_hi": 9,
+  "k_lo": 14,
+  "k_hi": 16,
+  "kt_lat": 16
+ },
+ "behavior": {
+  "stood": 8,
+  "t_up_med": 3.0,
+  "hold_iq": 0.23578524999999997,
+  "hold_arm_speed": 0.22473932295650448,
+  "arm_drift": 2.5437676781088054,
+  "effort": 0.22402815109524155,
+  "safety_stops": 0
+ },
+ "base_score": 235.2,
+ "history": [
+  244.6,
+  244.4,
+  242.6,
+  238.0,
+  250.0,
+  239.6,
+  242.0,
+  248.6,
+  241.2,
+  247.0,
+  241.8,
+  247.8,
+  245.6,
+  241.6,
+  248.2,
+  248.6,
+  247.8,
+  249.8,
+  249.4,
+  249.0,
+  249.2,
+  250.2,
+  250.0,
+  250.6
+ ],
+ "gens": 24,
+ "pop": 20,
+ "select": "gate",
+ "net": "ppo",
+ "candidates": {
+  "평균 8세대": {
+   "score": 241.8,
+   "gate32": 24
+  },
+  "평균 16세대": {
+   "score": 241.2,
+   "gate32": 15
+  },
+  "최고 후보": {
+   "score": 250.6,
+   "gate32": 22
+  },
+  "마지막 평균": {
+   "score": 250.2,
+   "gate32": 23
+  }
+ },
+ "best_score": 235.2,
+ "raw_best_score": 250.6,
+ "picked": "바탕 유지(탈락)",
+ "gate32": null,
+ "sim_steps": 1046800,
+ "app_seconds": 22.2,
+ "py_seconds": 28.9
+}

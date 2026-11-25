@@ -1,0 +1,743 @@
+{
+ "arm": {
+  "mass_kg": 0.1526345029463529,
+  "com_m": [
+   0.0005641570212289791,
+   -0.0011374130573853143,
+   -0.013337005886723667
+  ],
+  "inertia_about_com_kgm2": [
+   [
+    0.00010195651448233721,
+    3.2707078071034264e-07,
+    -2.1368790373745765e-06
+   ],
+   [
+    3.2707078071034264e-07,
+    0.00010200233908654251,
+    1.4505326478907886e-06
+   ],
+   [
+    -2.1368790373745765e-06,
+    1.4505326478907886e-06,
+    5.600171102902164e-05
+   ]
+  ]
+ },
+ "pend_with_tip": {
+  "mass_kg": 0.11109524433439734,
+  "com_m": [
+   0.04444684430726378,
+   -0.04935156905439784,
+   -0.03384403238783429
+  ],
+  "inertia_about_com_kgm2": [
+   [
+    0.00035370772575073493,
+    3.37494371514694e-05,
+    4.828827393628991e-05
+   ],
+   [
+    3.37494371514694e-05,
+    0.0003466369709588789,
+    -5.369149969869353e-05
+   ],
+   [
+    4.828827393628991e-05,
+    -5.369149969869353e-05,
+    6.94648997771974e-05
+   ]
+  ]
+ },
+ "pend_no_tip": {
+  "mass_kg": 0.10078423076399792,
+  "com_m": [
+   0.04351752068709782,
+   -0.04831825847206071,
+   -0.024129622074793345
+  ],
+  "inertia_about_com_kgm2": [
+   [
+    0.0002498703590369938,
+    3.270667670805893e-05,
+    3.848502312414161e-05
+   ],
+   [
+    3.270667670805893e-05,
+    0.00024302122220340894,
+    -4.27913110177161e-05
+   ],
+   [
+    3.848502312414161e-05,
+    -4.27913110177161e-05,
+    6.704626817894621e-05
+   ]
+  ]
+ },
+ "pivot_m": [
+  0,
+  0,
+  0.014
+ ],
+ "pend_axis": [
+  0.6691306063588582,
+  -0.7431448254773942,
+  0.0
+ ],
+ "parts": [
+  {
+   "name": "688ZZ_inner",
+   "body": "arm",
+   "material": "steel (688ZZ catalogue mass)",
+   "mass_g": 3.6
+  },
+  {
+   "name": "688ZZ_outer",
+   "body": "arm",
+   "material": "steel (688ZZ catalogue mass)",
+   "mass_g": 3.6
+  },
+  {
+   "name": "AS5600_chip",
+   "body": "arm",
+   "material": "plastic",
+   "mass_g": 0.042
+  },
+  {
+   "name": "BTN_M2.5x5_HAT_1",
+   "body": "base",
+   "material": "steel",
+   "mass_g": 0.402
+  },
+  {
+   "name": "BTN_M2.5x5_HAT_2",
+   "body": "base",
+   "material": "steel",
+   "mass_g": 0.402
+  },
+  {
+   "name": "BTN_M2.5x5_HAT_3",
+   "body": "base",
+   "material": "steel",
+   "mass_g": 0.402
+  },
+  {
+   "name": "BTN_M2.5x5_HAT_4",
+   "body": "base",
+   "material": "steel",
+   "mass_g": 0.402
+  },
+  {
+   "name": "CSK_M3x12_plate_motor_1",
+   "body": "base",
+   "material": "steel",
+   "mass_g": 0.847
+  },
+  {
+   "name": "CSK_M3x12_plate_motor_2",
+   "body": "base",
+   "material": "steel",
+   "mass_g": 0.847
+  },
+  {
+   "name": "CSK_M3x12_plate_motor_3",
+   "body": "base",
+   "material": "steel",
+   "mass_g": 0.847
+  },
+  {
+   "name": "CSK_M3x12_plate_motor_4",
+   "body": "base",
+   "material": "steel",
+   "mass_g": 0.847
+  },
+  {
+   "name": "CSK_M3x12_tip_weight",
+   "body": "pend",
+   "material": "steel",
+   "mass_g": 0.847
+  },
+  {
+   "name": "CSK_M3x16_pend_axle_clamp",
+   "body": "pend",
+   "material": "steel",
+   "mass_g": 1.069
+  },
+  {
+   "name": "CSK_M3x16_pend_rod_clamp",
+   "body": "pend",
+   "material": "steel",
+   "mass_g": 1.069
+  },
+  {
+   "name": "CSK_M3x50_box_lid_1",
+   "body": "base",
+   "material": "steel",
+   "mass_g": 2.955
+  },
+  {
+   "name": "CSK_M3x50_box_lid_2",
+   "body": "base",
+   "material": "steel",
+   "mass_g": 2.955
+  },
+  {
+   "name": "CSK_M3x50_box_lid_3",
+   "body": "base",
+   "material": "steel",
+   "mass_g": 2.955
+  },
+  {
+   "name": "CSK_M3x50_box_lid_4",
+   "body": "base",
+   "material": "steel",
+   "mass_g": 2.955
+  },
+  {
+   "name": "CSK_M3x8_leg_holder_1",
+   "body": "base",
+   "material": "steel",
+   "mass_g": 0.625
+  },
+  {
+   "name": "CSK_M3x8_leg_holder_2",
+   "body": "base",
+   "material": "steel",
+   "mass_g": 0.625
+  },
+  {
+   "name": "CSK_M3x8_leg_holder_3",
+   "body": "base",
+   "material": "steel",
+   "mass_g": 0.625
+  },
+  {
+   "name": "CSK_M3x8_lid_1",
+   "body": "arm",
+   "material": "steel",
+   "mass_g": 0.625
+  },
+  {
+   "name": "CSK_M3x8_lid_2",
+   "body": "arm",
+   "material": "steel",
+   "mass_g": 0.625
+  },
+  {
+   "name": "CSK_M3x8_lid_3",
+   "body": "arm",
+   "material": "steel",
+   "mass_g": 0.625
+  },
+  {
+   "name": "CSK_M3x8_lid_4",
+   "body": "arm",
+   "material": "steel",
+   "mass_g": 0.625
+  },
+  {
+   "name": "CSK_M3x8_lid_tower_1",
+   "body": "base",
+   "material": "steel",
+   "mass_g": 0.625
+  },
+  {
+   "name": "CSK_M3x8_lid_tower_2",
+   "body": "base",
+   "material": "steel",
+   "mass_g": 0.625
+  },
+  {
+   "name": "CSK_M3x8_lid_tower_3",
+   "body": "base",
+   "material": "steel",
+   "mass_g": 0.625
+  },
+  {
+   "name": "CSK_M3x8_lid_tower_4",
+   "body": "base",
+   "material": "steel",
+   "mass_g": 0.625
+  },
+  {
+   "name": "CSK_M3x8_topplate_tower_1",
+   "body": "base",
+   "material": "steel",
+   "mass_g": 0.625
+  },
+  {
+   "name": "CSK_M3x8_topplate_tower_2",
+   "body": "base",
+   "material": "steel",
+   "mass_g": 0.625
+  },
+  {
+   "name": "CSK_M3x8_topplate_tower_3",
+   "body": "base",
+   "material": "steel",
+   "mass_g": 0.625
+  },
+  {
+   "name": "E-stop_22mm_placeholder",
+   "body": "base",
+   "material": "misc",
+   "mass_g": 22.808
+  },
+  {
+   "name": "Ering_E6",
+   "body": "pend",
+   "material": "steel",
+   "mass_g": 0.301
+  },
+  {
+   "name": "FOOT_silicone_5x11_1",
+   "body": "base",
+   "material": "silicone",
+   "mass_g": 0.57
+  },
+  {
+   "name": "FOOT_silicone_5x11_2",
+   "body": "base",
+   "material": "silicone",
+   "mass_g": 0.57
+  },
+  {
+   "name": "FOOT_silicone_5x11_3",
+   "body": "base",
+   "material": "silicone",
+   "mass_g": 0.57
+  },
+  {
+   "name": "FOOT_silicone_5x11_4",
+   "body": "base",
+   "material": "silicone",
+   "mass_g": 0.57
+  },
+  {
+   "name": "Grove_AS5600_PCB",
+   "body": "arm",
+   "material": "PCB",
+   "mass_g": 2.351
+  },
+  {
+   "name": "Grove_connector",
+   "body": "arm",
+   "material": "plastic",
+   "mass_g": 0.683
+  },
+  {
+   "name": "Grove_plug_placeholder",
+   "body": "arm",
+   "material": "plastic",
+   "mass_g": 0.595
+  },
+  {
+   "name": "Grove_switch",
+   "body": "arm",
+   "material": "plastic",
+   "mass_g": 0.083
+  },
+  {
+   "name": "INS_drum_cradle_1",
+   "body": "arm",
+   "material": "brass",
+   "mass_g": 0.304
+  },
+  {
+   "name": "INS_drum_cradle_2",
+   "body": "arm",
+   "material": "brass",
+   "mass_g": 0.304
+  },
+  {
+   "name": "INS_drum_cradle_3",
+   "body": "arm",
+   "material": "brass",
+   "mass_g": 0.304
+  },
+  {
+   "name": "INS_drum_cradle_4",
+   "body": "arm",
+   "material": "brass",
+   "mass_g": 0.304
+  },
+  {
+   "name": "INS_drum_lid_1",
+   "body": "arm",
+   "material": "brass",
+   "mass_g": 0.304
+  },
+  {
+   "name": "INS_drum_lid_2",
+   "body": "arm",
+   "material": "brass",
+   "mass_g": 0.304
+  },
+  {
+   "name": "INS_drum_lid_3",
+   "body": "arm",
+   "material": "brass",
+   "mass_g": 0.304
+  },
+  {
+   "name": "INS_drum_lid_4",
+   "body": "arm",
+   "material": "brass",
+   "mass_g": 0.304
+  },
+  {
+   "name": "INS_holder_1",
+   "body": "base",
+   "material": "brass",
+   "mass_g": 0.304
+  },
+  {
+   "name": "INS_holder_2",
+   "body": "base",
+   "material": "brass",
+   "mass_g": 0.304
+  },
+  {
+   "name": "INS_holder_3",
+   "body": "base",
+   "material": "brass",
+   "mass_g": 0.304
+  },
+  {
+   "name": "INS_lid_box_1",
+   "body": "base",
+   "material": "brass",
+   "mass_g": 0.304
+  },
+  {
+   "name": "INS_lid_box_2",
+   "body": "base",
+   "material": "brass",
+   "mass_g": 0.304
+  },
+  {
+   "name": "INS_lid_box_3",
+   "body": "base",
+   "material": "brass",
+   "mass_g": 0.304
+  },
+  {
+   "name": "INS_lid_box_4",
+   "body": "base",
+   "material": "brass",
+   "mass_g": 0.304
+  },
+  {
+   "name": "INS_pend_hub_axle",
+   "body": "pend",
+   "material": "brass",
+   "mass_g": 0.304
+  },
+  {
+   "name": "INS_pend_hub_rod",
+   "body": "pend",
+   "material": "brass",
+   "mass_g": 0.304
+  },
+  {
+   "name": "INS_tower_flange_1",
+   "body": "base",
+   "material": "brass",
+   "mass_g": 0.304
+  },
+  {
+   "name": "INS_tower_flange_2",
+   "body": "base",
+   "material": "brass",
+   "mass_g": 0.304
+  },
+  {
+   "name": "INS_tower_flange_3",
+   "body": "base",
+   "material": "brass",
+   "mass_g": 0.304
+  },
+  {
+   "name": "INS_tower_flange_4",
+   "body": "base",
+   "material": "brass",
+   "mass_g": 0.304
+  },
+  {
+   "name": "INS_tower_top_1",
+   "body": "base",
+   "material": "brass",
+   "mass_g": 0.304
+  },
+  {
+   "name": "INS_tower_top_2",
+   "body": "base",
+   "material": "brass",
+   "mass_g": 0.304
+  },
+  {
+   "name": "INS_tower_top_3",
+   "body": "base",
+   "material": "brass",
+   "mass_g": 0.304
+  },
+  {
+   "name": "RMD-X6-P20-60-E_output",
+   "body": "arm",
+   "material": "Al(motor)",
+   "mass_g": 29.704
+  },
+  {
+   "name": "RMD-X6-P20-60-E_stator",
+   "body": "base",
+   "material": "Al(motor)",
+   "mass_g": 0.0
+  },
+  {
+   "name": "RMD-X6-P20-60-E_stator",
+   "body": "base",
+   "material": "Al(motor)",
+   "mass_g": 218.701
+  },
+  {
+   "name": "Raspberry_Pi_5_simple",
+   "body": "base",
+   "material": "PCB",
+   "mass_g": 44.792
+  },
+  {
+   "name": "SEENGREAT_RS485_CAN_HAT_simple",
+   "body": "base",
+   "material": "PCB",
+   "mass_g": 23.19
+  },
+  {
+   "name": "SHCS_M3x8_cartridge_1",
+   "body": "arm",
+   "material": "steel",
+   "mass_g": 0.918
+  },
+  {
+   "name": "SHCS_M3x8_cartridge_2",
+   "body": "arm",
+   "material": "steel",
+   "mass_g": 0.918
+  },
+  {
+   "name": "SHCS_M3x8_cartridge_3",
+   "body": "arm",
+   "material": "steel",
+   "mass_g": 0.918
+  },
+  {
+   "name": "SHCS_M3x8_cartridge_4",
+   "body": "arm",
+   "material": "steel",
+   "mass_g": 0.918
+  },
+  {
+   "name": "SHCS_M4x16_drum_hub_motor_1",
+   "body": "arm",
+   "material": "steel",
+   "mass_g": 2.629
+  },
+  {
+   "name": "SHCS_M4x16_drum_hub_motor_2",
+   "body": "arm",
+   "material": "steel",
+   "mass_g": 2.629
+  },
+  {
+   "name": "SHCS_M4x16_drum_hub_motor_3",
+   "body": "arm",
+   "material": "steel",
+   "mass_g": 2.629
+  },
+  {
+   "name": "SHCS_M4x16_drum_hub_motor_4",
+   "body": "arm",
+   "material": "steel",
+   "mass_g": 2.629
+  },
+  {
+   "name": "SHCS_M4x16_drum_hub_motor_5",
+   "body": "arm",
+   "material": "steel",
+   "mass_g": 2.629
+  },
+  {
+   "name": "STANDOFF_M2.5x11_MF_1",
+   "body": "base",
+   "material": "brass",
+   "mass_g": 2.046
+  },
+  {
+   "name": "STANDOFF_M2.5x11_MF_2",
+   "body": "base",
+   "material": "brass",
+   "mass_g": 2.046
+  },
+  {
+   "name": "STANDOFF_M2.5x11_MF_3",
+   "body": "base",
+   "material": "brass",
+   "mass_g": 2.046
+  },
+  {
+   "name": "STANDOFF_M2.5x11_MF_4",
+   "body": "base",
+   "material": "brass",
+   "mass_g": 2.046
+  },
+  {
+   "name": "bearing_cartridge_rev16f",
+   "body": "arm",
+   "material": "PLA",
+   "mass_g": 7.132
+  },
+  {
+   "name": "box_lid_logo_black",
+   "body": "base",
+   "material": "PLA",
+   "mass_g": 0.141
+  },
+  {
+   "name": "box_lid_logo_blue",
+   "body": "base",
+   "material": "PLA",
+   "mass_g": 0.056
+  },
+  {
+   "name": "box_lid_rev18_body",
+   "body": "base",
+   "material": "PLA",
+   "mass_g": 68.013
+  },
+  {
+   "name": "breadboard_81x45x9.5",
+   "body": "base",
+   "material": "misc",
+   "mass_g": 51.941
+  },
+  {
+   "name": "cable_AS5600_4C_placeholder",
+   "body": "arm",
+   "material": "cable",
+   "mass_g": 1.547
+  },
+  {
+   "name": "drum_rev16d",
+   "body": "arm",
+   "material": "PLA",
+   "mass_g": 51.162
+  },
+  {
+   "name": "electronics_box_rev18",
+   "body": "base",
+   "material": "PLA",
+   "mass_g": 141.77
+  },
+  {
+   "name": "hub_rev16g",
+   "body": "arm",
+   "material": "PLA",
+   "mass_g": 22.843
+  },
+  {
+   "name": "lid_rev16d_body",
+   "body": "arm",
+   "material": "PLA",
+   "mass_g": 6.886
+  },
+  {
+   "name": "lid_rev16d_logo_black",
+   "body": "arm",
+   "material": "PLA",
+   "mass_g": 0.142
+  },
+  {
+   "name": "lid_rev16d_logo_blue",
+   "body": "arm",
+   "material": "PLA",
+   "mass_g": 0.056
+  },
+  {
+   "name": "magnet_8x2_diametric_N35",
+   "body": "pend",
+   "material": "NdFeB",
+   "mass_g": 0.754
+  },
+  {
+   "name": "magnet_holder_Al_D10x8_M4",
+   "body": "pend",
+   "material": "Al6061",
+   "mass_g": 1.553
+  },
+  {
+   "name": "motor_module_plate_rev17",
+   "body": "base",
+   "material": "PLA",
+   "mass_g": 34.457
+  },
+  {
+   "name": "pendulum_hub_rev18b",
+   "body": "pend",
+   "material": "PLA",
+   "mass_g": 7.762
+  },
+  {
+   "name": "pendulum_rod_SUS304_D8x134.5_M3tap",
+   "body": "pend",
+   "material": "SUS304",
+   "mass_g": 52.799
+  },
+  {
+   "name": "shaft_SUS304_D8x89",
+   "body": "pend",
+   "material": "SUS304",
+   "mass_g": 34.81
+  },
+  {
+   "name": "shim_8x10x0.3",
+   "body": "pend",
+   "material": "steel",
+   "mass_g": 0.061
+  },
+  {
+   "name": "slipring_SZH-SLI020_PLACEHOLDER",
+   "body": "base",
+   "material": "slipring",
+   "mass_g": 30.26
+  },
+  {
+   "name": "slipring_drive_adapter_rev16c",
+   "body": "arm",
+   "material": "PLA",
+   "mass_g": 0.461
+  },
+  {
+   "name": "slipring_holder_rev17b",
+   "body": "base",
+   "material": "PLA",
+   "mass_g": 14.596
+  },
+  {
+   "name": "tip_weight_disc_D16x6_csk",
+   "body": "pend",
+   "material": "brass",
+   "mass_g": 9.464
+  },
+  {
+   "name": "top_plate_rev18",
+   "body": "base",
+   "material": "PLA",
+   "mass_g": 28.62
+  },
+  {
+   "name": "tower_rev18",
+   "body": "base",
+   "material": "PLA",
+   "mass_g": 196.293
+  }
+ ]
+}

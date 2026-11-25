@@ -1,0 +1,25 @@
+{
+ "base": "base_sac_s1",
+ "reward": "(바탕 정책)",
+ "gate128": 121,
+ "per": {
+  "nom": 16,
+  "J_lo": 16,
+  "J_hi": 15,
+  "fric_lo": 16,
+  "fric_hi": 12,
+  "k_lo": 15,
+  "k_hi": 15,
+  "kt_lat": 16
+ },
+ "behavior": {
+  "stood": 8,
+  "t_up_med": 3.5700000000000003,
+  "hold_iq": 0.16244999999999998,
+  "hold_arm_speed": 0.08567279647287429,
+  "arm_drift": 3.8355255761679254,
+  "effort": 0.22264352353948,
+  "safety_stops": 0
+ },
+ "net": "sac"
+}

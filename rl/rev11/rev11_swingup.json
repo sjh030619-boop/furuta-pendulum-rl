@@ -1,0 +1,19 @@
+{
+ "t_up": 0.88,
+ "final_upright": 1.0,
+ "tau_peak": 0.9972847700119019,
+ "arm_range_deg": [
+  -158.11971863701507,
+  172.6999563449918
+ ],
+ "w_arm_peak": 14.15943409616021,
+ "w_pend_peak": 17.963134268710064,
+ "swings": 6,
+ "frames": 151,
+ "fps": 25.0,
+ "seconds": 6.0,
+ "mb": 0.954604,
+ "controller": "SAC 정책 스윙업",
+ "policy": "C:\\Users\\JH\\Downloads\\Furuta_rev18b_MuJoCo (2)\\rl\\rev11\\sac_rev11.zip",
+ "al0": 0.0
+}

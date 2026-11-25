@@ -1,0 +1,257 @@
+{
+ "results": {
+  "hardware": {
+   "n": 28,
+   "caught": 28,
+   "first_ok": 13,
+   "t_catch_median": 1.67,
+   "t_catch_range": [
+    0.78,
+    3.2
+   ],
+   "last2_mean": 0.9921428571428572
+  },
+  "sim_k0.87_kt1.00": {
+   "n": 56,
+   "caught": 56,
+   "first_ok": 55,
+   "t_catch_median": 1.54,
+   "t_catch_range": [
+    1.42,
+    1.94
+   ],
+   "last2_mean": 1.0
+  },
+  "sim_k1.00_kt1.00": {
+   "n": 56,
+   "caught": 56,
+   "first_ok": 51,
+   "t_catch_median": 1.12,
+   "t_catch_range": [
+    1.06,
+    2.32
+   ],
+   "last2_mean": 1.0
+  },
+  "sim_k0.87_kt0.95": {
+   "n": 56,
+   "caught": 56,
+   "first_ok": 48,
+   "t_catch_median": 1.48,
+   "t_catch_range": [
+    1.3800000000000001,
+    3.06
+   ],
+   "last2_mean": 1.0
+  },
+  "sim_k1.00_kt0.95": {
+   "n": 56,
+   "caught": 56,
+   "first_ok": 40,
+   "t_catch_median": 1.6,
+   "t_catch_range": [
+    1.1,
+    2.9
+   ],
+   "last2_mean": 1.0
+  }
+ },
+ "hardware": [
+  {
+   "t_catch": 2.5,
+   "first_ok": false,
+   "last2": 1.0,
+   "run": "20261120_020653",
+   "T": 10.0
+  },
+  {
+   "t_catch": 3.16,
+   "first_ok": false,
+   "last2": 1.0,
+   "run": "20261120_021453",
+   "T": 10.0
+  },
+  {
+   "t_catch": 3.2,
+   "first_ok": false,
+   "last2": 1.0,
+   "run": "20261120_021617",
+   "T": 10.0
+  },
+  {
+   "t_catch": 0.78,
+   "first_ok": true,
+   "last2": 1.0,
+   "run": "20261120_044953",
+   "T": 10.0
+  },
+  {
+   "t_catch": 0.78,
+   "first_ok": true,
+   "last2": 0.8,
+   "run": "20261120_045120",
+   "T": 10.0
+  },
+  {
+   "t_catch": 0.78,
+   "first_ok": true,
+   "last2": 1.0,
+   "run": "20261120_055501",
+   "T": 10.0
+  },
+  {
+   "t_catch": 1.56,
+   "first_ok": true,
+   "last2": 1.0,
+   "run": "20261120_100149",
+   "T": 10.0
+  },
+  {
+   "t_catch": 1.56,
+   "first_ok": true,
+   "last2": 1.0,
+   "run": "20261120_100417",
+   "T": 10.0
+  },
+  {
+   "t_catch": 1.56,
+   "first_ok": true,
+   "last2": 1.0,
+   "run": "20261120_100553",
+   "T": 10.0
+  },
+  {
+   "t_catch": 1.74,
+   "first_ok": false,
+   "last2": 1.0,
+   "run": "20261120_100656",
+   "T": 10.0
+  },
+  {
+   "t_catch": 1.6,
+   "first_ok": true,
+   "last2": 1.0,
+   "run": "20261120_100804",
+   "T": 10.0
+  },
+  {
+   "t_catch": 1.82,
+   "first_ok": false,
+   "last2": 1.0,
+   "run": "20261120_100859",
+   "T": 10.0
+  },
+  {
+   "t_catch": 1.46,
+   "first_ok": true,
+   "last2": 1.0,
+   "run": "20261120_101402",
+   "T": 10.0
+  },
+  {
+   "t_catch": 2.12,
+   "first_ok": false,
+   "last2": 1.0,
+   "run": "20261120_101812",
+   "T": 10.0
+  },
+  {
+   "t_catch": 1.42,
+   "first_ok": true,
+   "last2": 1.0,
+   "run": "20261120_101901",
+   "T": 10.0
+  },
+  {
+   "t_catch": 1.44,
+   "first_ok": false,
+   "last2": 1.0,
+   "run": "20261120_101952",
+   "T": 10.0
+  },
+  {
+   "t_catch": 2.1,
+   "first_ok": false,
+   "last2": 1.0,
+   "run": "20261120_102958",
+   "T": 10.0
+  },
+  {
+   "t_catch": 2.16,
+   "first_ok": false,
+   "last2": 1.0,
+   "run": "20261120_103023",
+   "T": 10.0
+  },
+  {
+   "t_catch": 2.1,
+   "first_ok": false,
+   "last2": 1.0,
+   "run": "20261120_111254",
+   "T": 10.0
+  },
+  {
+   "t_catch": 2.0,
+   "first_ok": false,
+   "last2": 1.0,
+   "run": "20261120_111351",
+   "T": 10.0
+  },
+  {
+   "t_catch": 1.08,
+   "first_ok": true,
+   "last2": 1.0,
+   "run": "20261120_113415",
+   "T": 10.0
+  },
+  {
+   "t_catch": 2.06,
+   "first_ok": false,
+   "last2": 1.0,
+   "run": "20261120_113758",
+   "T": 10.0
+  },
+  {
+   "t_catch": 2.46,
+   "first_ok": false,
+   "last2": 0.98,
+   "run": "20261120_113958",
+   "T": 10.0
+  },
+  {
+   "t_catch": 2.24,
+   "first_ok": false,
+   "last2": 1.0,
+   "run": "20261120_120216",
+   "T": 10.0
+  },
+  {
+   "t_catch": 1.56,
+   "first_ok": true,
+   "last2": 1.0,
+   "run": "20261120_120358",
+   "T": 10.0
+  },
+  {
+   "t_catch": 1.46,
+   "first_ok": true,
+   "last2": 1.0,
+   "run": "20261123_082958",
+   "T": 10.0
+  },
+  {
+   "t_catch": 3.0,
+   "first_ok": false,
+   "last2": 1.0,
+   "run": "20261123_083123",
+   "T": 10.0
+  },
+  {
+   "t_catch": 1.42,
+   "first_ok": true,
+   "last2": 1.0,
+   "run": "20261123_083146",
+   "T": 10.0
+  }
+ ]
+}

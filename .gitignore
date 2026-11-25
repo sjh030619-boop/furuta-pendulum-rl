@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.claude/
+%USERPROFILE%/
+app/node_modules/
+app/dist/
+app/src_backup_*/
+s2r/pi_mirror_*/
+*.zip
+*.exe

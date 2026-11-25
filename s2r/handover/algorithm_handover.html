@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>알고리즘 선정 인수인계</title>
+<style>
+@page { size: A4; margin: 16mm 15mm 16mm 15mm; }
+:root { --ink: #1b1f24; --sub: #4a5260; --muted: #7a8391; --line: #d9dee5; --soft: #f3f6fa; --accent: #0163ec; --accent-soft: #e8f0fe; --good: #127a3a; --warn: #a15c00; --bad: #b3261e; }
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { margin: 0; font-family: "Malgun Gothic", "맑은 고딕", sans-serif; color: var(--ink); font-size: 10.2pt; line-height: 1.55; background: #fff; }
+h1 { font-size: 23pt; line-height: 1.25; margin: 0 0 6pt; letter-spacing: -0.5pt; }
+h2 { font-size: 14.5pt; margin: 0 0 8pt; padding-bottom: 4pt; border-bottom: 2px solid var(--accent); letter-spacing: -0.3pt; }
+h3 { font-size: 11.3pt; margin: 12pt 0 5pt; color: var(--accent); }
+p { margin: 0 0 6pt; }
+.page { page-break-after: always; break-after: page; }
+.page:last-child { page-break-after: auto; break-after: auto; }
+.num { display: inline-block; background: var(--accent); color: #fff; font-size: 9pt; padding: 1pt 7pt; border-radius: 3pt; margin-right: 6pt; vertical-align: 2pt; }
+.meta { color: var(--sub); font-size: 9.5pt; margin-bottom: 14pt; }
+.lead { background: var(--accent-soft); border-left: 4px solid var(--accent); padding: 10pt 12pt; margin: 10pt 0 12pt; font-size: 11pt; }
+.lead b { color: var(--accent); }
+table { border-collapse: collapse; width: 100%; margin: 4pt 0 9pt; font-size: 9.3pt; }
+th, td { border: 1px solid var(--line); padding: 4pt 6pt; vertical-align: top; text-align: left; }
+th { background: var(--soft); font-weight: 700; }
+td.c, th.c { text-align: center; }
+.win { font-weight: 700; color: var(--accent); }
+.good { color: var(--good); font-weight: 700; }
+.bad { color: var(--bad); font-weight: 700; }
+.warn { color: var(--warn); font-weight: 700; }
+figure { margin: 6pt 0 10pt; text-align: center; }
+figure img { max-width: 100%; border: 1px solid var(--line); border-radius: 3pt; }
+figcaption { font-size: 8.8pt; color: var(--sub); margin-top: 3pt; text-align: left; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 10pt; }
+.card { border: 1px solid var(--line); border-radius: 5pt; padding: 8pt 10pt; background: #fff; }
+.card h4 { margin: 0 0 4pt; font-size: 10.5pt; }
+.qa { border: 1px solid var(--line); border-radius: 5pt; padding: 9pt 11pt; margin: 0 0 9pt; }
+.qa .q { font-weight: 700; font-size: 10.8pt; margin-bottom: 4pt; }
+.qa .q::before { content: "Q. "; color: var(--accent); }
+.note { font-size: 8.8pt; color: var(--muted); }
+ul { margin: 2pt 0 6pt; padding-left: 15pt; }
+li { margin: 1.5pt 0; }
+code { font-family: Consolas, monospace; font-size: 8.6pt; background: var(--soft); padding: 0 3pt; border-radius: 2pt; }
+.tag { display: inline-block; font-size: 8.3pt; padding: 0 5pt; border-radius: 3pt; border: 1px solid var(--line); color: var(--sub); }
+.cover-box { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8pt; margin: 10pt 0 14pt; }
+.stat { border: 1px solid var(--line); border-radius: 5pt; padding: 8pt 10pt; }
+.stat .v { font-size: 17pt; font-weight: 700; color: var(--accent); line-height: 1.2; }
+.stat .k { font-size: 8.8pt; color: var(--sub); }
+.flow { display: flex; align-items: stretch; gap: 6pt; margin: 6pt 0 10pt; }
+.flow div { flex: 1; border: 1px solid var(--line); border-radius: 5pt; padding: 6pt 7pt; font-size: 8.9pt; background: var(--soft); }
+.flow div b { display: block; color: var(--accent); font-size: 9.6pt; margin-bottom: 2pt; }
+.flow span { align-self: center; color: var(--muted); font-size: 12pt; }
+.shot figcaption b { color: var(--ink); }
+</style>
+</head>
+<body>
+
+<!-- 1 -->
+<section class="page">
+  <div class="meta">Furuta Pendulum 캡스톤 · 인수인계 · 2026-11-25 · 작성 신지훈 (분석 정리: Claude)</div>
+  <h1>강화학습 알고리즘 선정 인수인계<br><span style="font-size:15pt;color:var(--sub)">PPO와 SAC를 비교하고, 바탕 정책은 SAC + 수업 중 학습은 CEM으로 정한 이유</span></h1>
+
+  <div class="lead">
+    <b>결론.</b> 바탕 정책은 <b>SAC</b>로 미리 만들고, 수업 중에는 앱 안에서 그 정책을 학생이 만든 보상 블록에 맞게 <b>CEM으로 '고쳐 배우게'</b> 한다.
+    다 배운 정책만 보면 PPO가 더 조용히 서지만, 수업에서 학생이 실제로 겪는 <b>"내 규칙으로 고쳐 배웠을 때 성공하느냐"</b>에서 SAC 바탕이 94% 대 59%로 앞섰다.
+  </div>
+
+  <div class="cover-box">
+    <div class="stat"><div class="v">2~4.5분</div><div class="k">SAC 바탕 학습 시간 (PPO는 29분 넘음, 시드 1개는 45분에도 실패)</div></div>
+    <div class="stat"><div class="v">94% vs 59%</div><div class="k">학생 보상으로 고쳐 배우기 성공률 (SAC 바탕 vs PPO 바탕)</div></div>
+    <div class="stat"><div class="v">0.20 A</div><div class="k">PPO의 장점: 실기에서 서 있을 때 전류 (SAC 0.36~0.57 A)</div></div>
+  </div>
+
+  <h3>이 문서에서 볼 것</h3>
+  <table>
+    <tr><th style="width:9%">쪽</th><th>내용</th></tr>
+    <tr><td class="c">2</td><td>무엇을 정하려 했나: 수업 흐름과 알고리즘에 바라는 것, PPO·SAC 한 장 설명</td></tr>
+    <tr><td class="c">3</td><td>어떻게 공정하게 비교했나, 그리고 남아 있는 불공정</td></tr>
+    <tr><td class="c">4</td><td>결과: 관점마다 누가 나은가 (그래프)</td></tr>
+    <tr><td class="c">5</td><td>우리가 고민했던 질문들과 답 (왜 결과가 좋은 PPO가 아니라 SAC인가, 왜 앱은 CEM인가)</td></tr>
+    <tr><td class="c">6</td><td>학생 보상으로 고쳐 배우기 시험, 실기 확인과 교훈</td></tr>
+    <tr><td class="c">7~8</td><td>앱(Pendulum Studio) 화면: 이 결정이 앱에서 어떻게 보이는가</td></tr>
+    <tr><td class="c">9</td><td>남은 일, 파일 위치와 재현 방법</td></tr>
+  </table>
+
+  <h3>측정 환경</h3>
+  <p>rev11 실기 키트(MyActuator RMD-X6 모터, AS5600 진자 엔코더, Raspberry Pi 5)와, 그 실기 측정값으로 보정한 MuJoCo 시뮬레이션. 모든 수치는 2026-11-24 측정.
+  원본 자료는 <code>s2r/PPO_vs_SAC_발표자료.md</code>, 그래프는 <code>s2r/figures/</code>.</p>
+</section>
+
+<!-- 2 -->
+<section class="page">
+  <h2><span class="num">1</span>무엇을 정하려 했나</h2>
+  <h3>키트의 수업 흐름</h3>
+  <div class="flow">
+    <div><b>① 보상 만들기</b>학생이 앱에서 블록으로 점수 규칙을 쌓는다. 예: "진자가 높을수록 +", "모터를 세게 쓰면 −"</div><span>→</span>
+    <div><b>② 고쳐 배우기</b>앱이 미리 학습해 둔 바탕 정책에서 출발해 학생 규칙에 맞게 몇~수십 초 다듬는다</div><span>→</span>
+    <div><b>③ 안전 시험</b>학생 점수와 상관없는 고정 시험을 통과한 정책만 남긴다</div><span>→</span>
+    <div><b>④ 실기</b>통과한 정책을 실제 키트에서 돌려 본다</div>
+  </div>
+
+  <h3>그래서 알고리즘에 바라는 것</h3>
+  <table>
+    <tr><th style="width:38%">바라는 것</th><th>왜</th></tr>
+    <tr><td>바탕 정책을 <b>빨리, 확실하게</b> 만든다</td><td>키트나 물리 모델이 바뀔 때마다(예: 이번 rev22 진자) 다시 만들어야 한다</td></tr>
+    <tr><td>학생 규칙으로 <b>고쳐도 무너지지 않는다</b></td><td>수업 중 학생이 기다릴 수 있는 시간은 1분 안쪽이다</td></tr>
+    <tr><td>실제 키트에서 <b>조용하고 확실하게</b> 선다</td><td>교구는 발열·소음·안전이 중요하다</td></tr>
+  </table>
+  <p class="note">세 가지가 한 알고리즘에서 동시에 최고가 아니었다. 그래서 "무엇을 더 중요하게 볼 것인가"가 고민의 핵심이었다.</p>
+
+  <h3>두 알고리즘 한 장 설명</h3>
+  <table>
+    <tr><th style="width:17%"></th><th>PPO (Proximal Policy Optimization)</th><th>SAC (Soft Actor-Critic)</th></tr>
+    <tr><td>비유</td><td>문제집을 한 번 풀고 버린 뒤 새 문제집을 푼다</td><td>푼 문제를 오답노트에 모아 두고 계속 다시 푼다</td></tr>
+    <tr><td>데이터</td><td>방금 모은 경험으로만 배우고 버린다 (on-policy)</td><td>경험을 저장해 여러 번 다시 쓴다 (off-policy, 리플레이 버퍼)</td></tr>
+    <tr><td>장점</td><td>한 번에 조금씩만 바꿔 안정적, 구조가 단순</td><td>같은 경험으로 많이 배워서 빠르다</td></tr>
+    <tr><td>단점</td><td>경험이 많이 필요, 탐색을 운에 맡기는 편</td><td>학습 중 잠깐 무너지는 일이 있다, 계산이 무겁다</td></tr>
+    <tr><td>탐색</td><td>행동에 정해진 크기의 잡음을 섞는다</td><td>"다양하게 행동할수록 보너스"를 보상에 더한다 (엔트로피 최대화)</td></tr>
+  </table>
+
+  <h3>용어</h3>
+  <ul>
+    <li><b>정책</b>: 상태(각도·속도)를 보고 모터 힘을 정하는 작은 신경망 (64×64)</li>
+    <li><b>바탕 정책</b>: 미리 학습해 앱에 넣어 두는 출발점 정책</li>
+    <li><b>시드</b>: 난수 시작값. 같은 설정이라도 시드가 다르면 결과가 달라질 수 있다</li>
+    <li><b>128칸 시험</b>: 조건 8개(마찰·관성·결합·토크·지연) × 시작 자세 16개. 12초 안에 세워 ±5° 안에서 5초 버티면 1칸 통과</li>
+    <li><b>고쳐 배우기(파인튜닝)</b>: 처음부터가 아니라 이미 배운 정책을 조금씩 바꿔 새 목표에 맞추는 것</li>
+    <li><b>CEM</b>(cross-entropy method): 정책 숫자를 무작위로 조금씩 바꾼 후보를 여러 개 돌려 보고, 점수 좋은 후보들 쪽으로 옮기기를 반복하는 방법. 기울기 계산이 필요 없다</li>
+  </ul>
+</section>
+
+<!-- 3 -->
+<section class="page">
+  <h2><span class="num">2</span>어떻게 공정하게 비교했나</h2>
+  <h3>똑같이 맞춘 것</h3>
+  <ul>
+    <li>같은 환경: rev11 실기 측정값으로 보정한 시뮬레이션, 마찰·관성·결합·토크·지연을 같은 범위에서 무작위로 바꿈</li>
+    <li>같은 보상 식, 같은 입력(관측 6개)과 출력(모터 힘 1개), 같은 신경망 크기(64×64)</li>
+    <li>같은 시계: 실제 흐른 시간(벽시계)으로 재고, 평가에 쓴 시간은 뺌</li>
+    <li>같은 멈춤 규칙: 30초마다 32칸 빠른 시험, 30칸 이상이 2번 연속이면 학습 종료</li>
+    <li>같은 최종 시험(128칸), 알고리즘마다 시드 3개</li>
+    <li>실기: 같은 날, 같은 키트, 같은 전류 상한(1.2 A), 번갈아 가며 5회씩, 매번 진자가 멈춘 뒤 시작</li>
+    <li>고쳐 배우기: 같은 CEM 설정, 같은 학생 보상 13개, 같은 계산량</li>
+  </ul>
+
+  <h3>일부러 다르게 둔 것</h3>
+  <p>각 알고리즘이 잘 돌아가는 표준 방식을 그대로 썼다. 억지로 같게 맞추면 오히려 한쪽이 불리해진다.</p>
+  <table>
+    <tr><th></th><th class="c">SAC</th><th class="c">PPO</th></tr>
+    <tr><td>동시에 돌리는 환경 수</td><td class="c">8개</td><td class="c">24개</td></tr>
+    <tr><td>초당 모으는 경험</td><td class="c">약 1,200 스텝</td><td class="c">약 8,000~11,000 스텝</td></tr>
+    <tr><td>신경망 활성화 함수</td><td class="c">ReLU</td><td class="c">tanh</td></tr>
+  </table>
+
+  <h3>남아 있는 불공정 (발표 때 꼭 밝힐 것)</h3>
+  <table>
+    <tr><th style="width:22%">항목</th><th>내용</th></tr>
+    <tr><td>조율</td><td>SAC는 학습률 하나를 조율했고(효과 약 1.5배), PPO는 설정 4가지를 시험했지만 기본값보다 나은 것을 찾지 못했다. 조율 차이로 설명되는 건 1.5배 정도이고, 학습 시간 차이는 약 7배다.</td></tr>
+    <tr><td>실기 시험 수</td><td>PPO는 가장 좋은 시드 1개만 실기에 올렸다(SAC는 3개). PPO 실기 수치는 성공한 시드 하나의 값이다.</td></tr>
+    <tr><td class="warn">다른 환경에서는 반대</td><td>조원 B의 환경·구현에서는 PPO가 11~13분에 성공했고 SAC는 25분 안에 실패했다. <b>"SAC가 항상 빠르다"고 일반화하면 안 된다.</b> 이 결론은 우리 rev11 환경·구현에서의 결과다.</td></tr>
+  </table>
+</section>
+
+<!-- 4 -->
+<section class="page">
+  <h2><span class="num">3</span>결과: 관점마다 누가 나은가</h2>
+  <table>
+    <tr><th style="width:34%">관점</th><th class="c">SAC (시드 3개)</th><th class="c">PPO</th><th class="c" style="width:15%">나은 쪽</th></tr>
+    <tr><td>① 바탕 정책 만드는 시간</td><td class="c">2.0 · 4.0 · 4.5분</td><td class="c">29.0 · 29.5분, 1개는 45분에도 실패</td><td class="c win">SAC (약 7배)</td></tr>
+    <tr><td>② 시드마다 고르게 되나 (128칸)</td><td class="c">127 · 121 · 128</td><td class="c">119 · 125 · <span class="bad">2</span></td><td class="c win">SAC</td></tr>
+    <tr><td>③ 실기에서 서 있을 때 전류</td><td class="c">0.36 · 0.41 · 0.57 A</td><td class="c">0.20 A</td><td class="c win">PPO (절반 이하)</td></tr>
+    <tr><td>④ 실기에서 세우기 시작한 시각</td><td class="c">2.20 · 2.34 · 2.46초</td><td class="c">1.94초</td><td class="c win">PPO (조금)</td></tr>
+    <tr><td>실기 엄격 통과</td><td class="c">15/15</td><td class="c">5/5</td><td class="c">같음</td></tr>
+    <tr><td>⑤ 학생 보상으로 고쳐 배우기 성공</td><td class="c">31/33 (94%)</td><td class="c">13/22 (59%)</td><td class="c win">SAC</td></tr>
+    <tr><td>⑥ 고친 뒤에도 128칸 120 이상</td><td class="c">26/33 (79%)</td><td class="c">9/22 (41%)</td><td class="c win">SAC</td></tr>
+    <tr><td>잘못된 규칙 걸러내기</td><td class="c">6/6</td><td class="c">4/4</td><td class="c">같음 (둘 다 안전)</td></tr>
+  </table>
+  <figure>
+    <img src="../figures/summary_tradeoff.png" style="max-height:62mm">
+    <figcaption>관점별 비교. 빨리·고르게 배우고 고쳐 배우기에 강한 쪽은 SAC, 다 배운 뒤 조용히 서는 쪽은 PPO.</figcaption>
+  </figure>
+  <figure>
+    <img src="../figures/learning_curves.png" style="max-height:66mm">
+    <figcaption>학습 곡선. 선은 시드 3개 평균, 연한 띠는 최저~최고. 왼쪽(시간 축): SAC는 2분에 평균 100을 넘고, PPO는 25분이 지나도 띠가 0~128에 걸쳐 시드마다 크게 다르다.
+    오른쪽(경험량 축): SAC는 약 10만 스텝, PPO는 약 200만 스텝부터 오른다. 경험을 재사용하는 off-policy 방식의 효과다.</figcaption>
+  </figure>
+</section>
+
+<!-- 5 -->
+<section class="page">
+  <h2><span class="num">4</span>우리가 고민했던 질문들</h2>
+
+  <div class="qa">
+    <div class="q">다 배운 결과는 PPO가 좋아 보이고, 학습 과정은 SAC가 좋아 보인다. 그런데 왜 CEM이 출발점으로 쓰는 건 SAC 정책인가?</div>
+    <p>"결과"도 항목을 나눠 보면 PPO가 이긴 건 <b>실기에서 서 있을 때 전류(③)</b>와 <b>세우기 시작 시각(④)</b>뿐이다. 그마저 성공한 PPO 시드 하나의 값이다(실패한 시드는 실기에 올릴 수도 없었다).
+    CEM 고쳐 배우기는 어떤 알고리즘이 만든 정책이든 신경망 숫자를 조금씩 흔들며 점수 좋은 쪽으로 옮기는 방법이라, 바탕 정책에 필요한 건 "가장 잘 서는 것"이 아니라 다음 세 가지다.</p>
+    <table>
+      <tr><th style="width:27%">바탕 정책에 필요한 것</th><th>측정 결과</th></tr>
+      <tr><td><b>흔들어도 안 무너질 것</b></td><td>같은 CEM 설정·같은 보상 13개·같은 계산량으로 직접 시험: 고쳐 배우기 성공 <span class="good">SAC 94%</span> 대 <span class="bad">PPO 59%</span>. <b>결정의 직접 근거.</b></td></tr>
+      <tr><td><b>다시 만들기 쉬울 것</b></td><td>키트가 바뀌면 바탕을 다시 학습해야 한다. SAC 2~4.5분 vs PPO 30분 이상.</td></tr>
+      <tr><td><b>좋은 바탕이 매번 나올 것</b></td><td>SAC 시드 3/3 성공. PPO 바탕 2번은 SAC만큼 잘 고쳐졌지만(11개 중 9개), 그런 바탕이 나오는지가 시드 운에 달렸다. PPO 바탕 0번은 고정 시험 30/32(합격선 그대로)라 조금만 바뀌어도 탈락했다.</td></tr>
+    </table>
+    <p class="note">해석(측정 아님): SAC는 "다양하게 행동할수록 보너스"를 받으며 배워서 여러 상태를 겪고, 조금 어긋나도 회복하는 넓은 정책이 된다. PPO는 한 가지 매끄러운 동작으로 좁게 수렴해서, 조용한 대신 숫자를 조금만 건드려도 성능이 떨어지기 쉽다. SAC의 전류가 큰 것도 같은 성질의 대가로 추정한다.</p>
+  </div>
+
+  <div class="qa">
+    <div class="q">앱 안에서는 왜 SAC나 PPO를 그대로 돌리지 않고 CEM을 쓰나?</div>
+    <ul>
+      <li><b>시간</b>: 처음부터 배우면 SAC도 2~4분이다. 바탕에서 고쳐 배우면 앱 기준 수 초~수십 초로, 수업 중 기다릴 만하다.</li>
+      <li><b>학생 블록 보상과 잘 맞음</b>: CEM은 점수만 보면 되고 기울기가 필요 없어서, 학생이 아무렇게나 쌓은 보상(불연속, 드문 보너스 등)도 그대로 쓸 수 있다. 브라우저(JS) 안에서 별도 런타임 없이 돈다.</li>
+      <li><b>설명하기 쉬움</b>: "여러 번 해 보고, 점수 좋았던 쪽으로 옮긴다"가 학습지의 강화학습 설명과 같다. 학생이 블록으로 세대 수·후보 수·바꾸는 크기를 직접 바꿔 볼 수도 있다.</li>
+    </ul>
+  </div>
+
+  <div class="qa">
+    <div class="q">그럼 PPO가 더 나은 경우는?</div>
+    <ul>
+      <li>바탕 정책을 한 번만 만들고 오래 쓰는 경우 (학습 시간이 덜 중요할 때)</li>
+      <li>조용함·발열이 가장 중요한 경우 (실기 전류 0.20 A, SAC의 절반 이하)</li>
+      <li>다른 구현·환경에서는 PPO가 더 빨랐던 사례(조원 B)도 있다</li>
+    </ul>
+    <p class="note">조용함을 SAC에서 얻으려고 학생 규칙에 "힘 아끼기"를 넣어 보니 시뮬에서는 전류가 0.44 → 0.25 A로 줄었지만, 실기에서는 그대로 나오지 않았다(6쪽). 아직 남은 약점이다.</p>
+  </div>
+</section>
+
+<!-- 6 -->
+<section class="page">
+  <h2><span class="num">5</span>학생 보상으로 고쳐 배우기 시험</h2>
+  <figure>
+    <img src="../figures/summary_finetune.png" style="max-height:56mm">
+    <figcaption>학생이 만들 만한 보상 13개(기대 9, 어려움 2, 잘못된 규칙 2)로 같은 CEM 고쳐 배우기를 했을 때 바탕별 결과.</figcaption>
+  </figure>
+
+  <h3>1분 안에 끝내는 장치 세 가지</h3>
+  <table>
+    <tr><th style="width:20%">장치</th><th>내용</th></tr>
+    <tr><td>고쳐 배우기</td><td>처음부터가 아니라 바탕 정책에서 출발. 시험 당시 앱 기준 약 22초(지금 앱은 예시 규칙당 약 9초).</td></tr>
+    <tr><td>조건 섞기</td><td>시작 자세 5개를 서로 다른 조건 5개(공칭, 마찰 큼·작음, 토크 약함+지연, 결합 약함)와 짝지어 점수를 냄. 계산량은 같다. 공칭 하나만 쓰면 128칸 120 이상 유지가 11개 중 2개, 섞으면 7개.</td></tr>
+    <tr><td>고정 시험</td><td>학생 점수와 상관없는 같은 시험을 통과한 후보만 고름. 통과 후보가 없으면 바탕 정책을 그대로 씀. 잘못된 규칙(부호 반대, 빨리 돌리기)은 모든 바탕에서 걸러졌다.</td></tr>
+  </table>
+
+  <h3>고친 정책의 실기 확인 (SAC 바탕, 2026-11-24, 정책마다 3회)</h3>
+  <table>
+    <tr><th>정책</th><th class="c">엄격 통과</th><th class="c">서 있을 때 전류</th><th class="c">팔이 돈 거리</th><th>시뮬 예상</th><th>실기 결과</th></tr>
+    <tr><td>바탕 (고치기 전)</td><td class="c">3/3</td><td class="c">0.40 A</td><td class="c">9.6~15.1 rad</td><td>기준</td><td>기준</td></tr>
+    <tr><td>팔 제자리</td><td class="c">3/3</td><td class="c">0.24 A</td><td class="c">0.1~0.3 rad</td><td>팔 이동 3.8 → 1.0 rad</td><td class="good">의도대로, 시뮬보다 더 잘 됨</td></tr>
+    <tr><td>서면 보너스</td><td class="c">3/3</td><td class="c">0.31 A</td><td class="c">2.2~2.8 rad</td><td>전류 0.42 → 0.19 A</td><td>전류 조금 줄고 팔 이동 크게 줄어듦</td></tr>
+    <tr><td>조용히 서기</td><td class="c">3/3</td><td class="c">0.47 A</td><td class="c">12.0~13.3 rad</td><td>전류 0.42 → 0.14 A</td><td class="warn">전류가 오히려 늘어남</td></tr>
+    <tr><td>힘 아주 아끼기</td><td class="c bad">0/3</td><td class="c">0.76 A</td><td class="c">46 rad</td><td>전류 0.42 → 0.18 A</td><td class="bad">실패: 직립을 지나쳐 계속 돔</td></tr>
+  </table>
+  <div class="lead" style="font-size:9.8pt">
+    <b>교훈.</b> 시뮬 고정 시험을 다 통과한 정책도 실기에서 실패할 수 있다. '힘 아주 아끼기'는 시뮬에서 실기와 같은 정지 상태로 시작하면 조건 8개 모두 성공했고, 원인은 아직 모른다(시뮬 무작위화 범위 밖의 차이로 추정).
+    그래서 키트 쪽 안전 정지(진자가 계속 돌면 정지), 처음 몇 초 안에 못 세우면 바탕으로 되돌리기, 바탕에서 멀리 바뀐 정책 경고가 필요하다.
+  </div>
+</section>
+
+<!-- 7 -->
+<section class="page">
+  <h2><span class="num">6</span>앱 화면: 결정이 앱에서 어떻게 보이나 (1)</h2>
+  <p>앱 이름은 <b>Pendulum Studio</b>. 학생에게 익숙한 엔트리 모양 블록으로 보상을 만들고, 앱 안의 시뮬레이션(rev11 실기 보정 물리)에서 고쳐 배운 뒤, 키트에 연결해 실기로 돌린다. 화면은 2026-11-24~25 캡처.</p>
+  <figure class="shot">
+    <img src="../../app/design/app_intro.png">
+    <figcaption><b>살펴보기 탭.</b> ① 미리 배운 에이전트(바탕 정책 = SAC)를 먼저 실행해 보고, ② 키트 구성을 살펴보고, ③ 강화학습 요소(상태·행동·보상)를 그림으로 익힌다.</figcaption>
+  </figure>
+  <figure class="shot">
+    <img src="../../app/design/app_free.png">
+    <figcaption><b>자유롭게 만들기.</b> 가운데 블록 영역에 "매 순간 점수 매기기"(보상)와 "시작하기 버튼을 클릭했을 때 → 학습 조건(세대·후보 수·바꾸는 크기) → 내 점수 규칙으로 정책 학습하기 → 시험하기" 블록을 쌓는다. 이 학습이 바탕 정책에서 출발하는 CEM 고쳐 배우기다.</figcaption>
+  </figure>
+</section>
+
+<!-- 8 -->
+<section class="page">
+  <h2><span class="num">6</span>앱 화면: 결정이 앱에서 어떻게 보이나 (2)</h2>
+  <figure class="shot">
+    <img src="../../app/design/app_graphs.png">
+    <figcaption><b>그래프 탭.</b> 세대마다 받은 점수(학습 곡선), 진자 높이, 모터 힘, 팔 돌아간 정도를 이전 기록과 겹쳐 비교한다. 결과 칸에 "안전 시험 통과 (40/40) – 실제 키트에서 시험할 수 있어요"처럼 고정 시험 결과가 뜬다.</figcaption>
+  </figure>
+  <div class="two">
+    <figure class="shot">
+      <img src="../../app/design/app_kit_real.png">
+      <figcaption><b>실제 키트 실행.</b> 안전 시험을 통과한 정책만 키트로 보낸다. 실기 결과(세운 시각, 모터 힘 등)가 시뮬 기록과 같은 표에 쌓인다.</figcaption>
+    </figure>
+    <figure class="shot">
+      <img src="../../app/design/app_kit_cal.png">
+      <figcaption><b>키트 맞추기.</b> 연결한 뒤 확인 단추를 눌러야 팔 관성·마찰, 진자 주기를 재고 학습 범위 안인지 보여 준다. 수평은 실행마다 자동으로 맞춘다.</figcaption>
+    </figure>
+  </div>
+  <h3>앱 학습 설정 (코드 기준, <code>app/src/js/learn.js</code>)</h3>
+  <table>
+    <tr><th style="width:24%">항목</th><th>값</th></tr>
+    <tr><td>CEM 기본값</td><td>24세대 × 한 세대 후보 20개, 상위 1/4을 평균해 다음 세대로, 바꾸는 크기 σ = 0.06 (세대마다 줄어듦). 학생이 블록으로 바꿀 수 있음</td></tr>
+    <tr><td>조건 섞기</td><td>시작 자세 5개 × 조건 5개(공칭, 마찰 큼, 마찰 작음, 토크 약함+지연, 결합 약함)를 하나씩 짝지음</td></tr>
+    <tr><td>안전 시험</td><td>40칸(조건 8개 × 시작 5개, '완전히 매달려 멈춘 상태' 포함). 후보 넷 중 37칸 이상 통과한 것에서 점수 최고를 고름. 없으면 바탕 정책 유지</td></tr>
+  </table>
+</section>
+
+<!-- 9 -->
+<section class="page">
+  <h2><span class="num">7</span>남은 일과 파일 위치</h2>
+  <h3>남은 일</h3>
+  <table>
+    <tr><th style="width:30%">할 일</th><th>내용</th></tr>
+    <tr><td>'힘 아주 아끼기' 실기 실패 원인</td><td>시뮬과 실기의 차이를 찾아 고정 시험에 반영</td></tr>
+    <tr><td>키트 쪽 안전 장치 추가</td><td>진자가 2초 넘게 계속 돌면 정지(지금은 진자 25 rad/s, 팔 1,100 dps에서만 정지), 못 세우면 바탕으로 되돌리기</td></tr>
+    <tr><td>SAC 전류 줄이기</td><td>바탕 정책 묶음에 조용한 정책 추가, 또는 잘 고쳐지는 PPO 바탕 2번을 두 번째 바탕으로 같이 두는 방안 검토</td></tr>
+    <tr><td>새 진자(rev22) 반영</td><td>출력 진자 + M6 볼로 바뀜. 주기는 0.70 s로 맞췄지만 볼 무게를 실측한 뒤 키트 맞추기로 확인. 범위를 벗어나면 SAC 바탕을 다시 학습(몇 분)</td></tr>
+    <tr><td>느린 노트북에서 시간 재기</td><td>앱 학습 시간은 개발 PC 기준</td></tr>
+  </table>
+
+  <h3>파일 위치</h3>
+  <table>
+    <tr><th style="width:36%">무엇</th><th>어디</th></tr>
+    <tr><td>비교 원본 정리 (이 문서의 근거)</td><td><code>s2r/PPO_vs_SAC_발표자료.md</code>, 그래프 <code>s2r/figures/</code>, 숫자 <code>s2r/summary_numbers.json</code></td></tr>
+    <tr><td>환경 · 시험 · 학생 보상</td><td><code>s2r/s2r_env.py</code>, <code>s2r/evaluate.py</code>, <code>s2r/student_rewards.py</code></td></tr>
+    <tr><td>바탕 정책</td><td><code>s2r/policies/base_sac_s*.npz</code>, 앱용 <code>s2r/runs_app_rules/</code></td></tr>
+    <tr><td>앱</td><td><code>app/src/</code> (학습 <code>learn.js</code>, 물리 <code>physics.js</code>), 키트 대기 프로그램 <code>app/kit/</code>, 통신 규약 <code>app/PROTOCOL.md</code></td></tr>
+  </table>
+
+  <h3>재현 방법</h3>
+  <table>
+    <tr><th style="width:26%">단계</th><th>명령</th><th style="width:22%">결과</th></tr>
+    <tr><td>시뮬 예선 (25분 × 6)</td><td><code>python s2r/stage1.py --plan</code></td><td><code>runs_stage1/</code></td></tr>
+    <tr><td>실기 본선 (Pi에서)</td><td><code>pi_host/run_stage2.sh</code></td><td><code>stage2/logs/</code></td></tr>
+    <tr><td>SAC 바탕 (멈춤 규칙)</td><td><code>python s2r/stage4_train.py --plan --dus 0</code></td><td><code>runs_stage4/</code></td></tr>
+    <tr><td>PPO 바탕 (이어 학습)</td><td><code>python s2r/base_train.py --cfg ppo_a --seed 2 --resume runs_stage1/ppo_s2_final.zip --subproc --tag cont</code></td><td><code>runs_base/</code></td></tr>
+    <tr><td>학생 보상 고쳐 배우기</td><td><code>python s2r/cem_finetune.py --base policies/base_sac_s0.npz ...</code></td><td><code>runs_reward/</code></td></tr>
+    <tr><td>정리 그래프</td><td><code>python s2r/plot_summary.py</code></td><td><code>figures/summary_*.png</code></td></tr>
+  </table>
+  <p class="note">실기를 움직이는 명령은 반드시 키트 옆에 사람이 있을 때만, Pi의 CAN 버스는 한 프로세스에서만 쓴다(조원 A의 Pi CLAUDE.md 규칙).</p>
+</section>
+
+</body>
+</html>

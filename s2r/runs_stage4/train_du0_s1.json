@@ -1,0 +1,53 @@
+{
+ "du": 0.0,
+ "seed": 1,
+ "rule": "2x30",
+ "budget": 600.0,
+ "every": 30.0,
+ "stopped": "rule",
+ "t_stop": 120.0,
+ "steps": 150672,
+ "full_strict": 121,
+ "full_loose": 128,
+ "per": {
+  "nom": 16,
+  "J_lo": 16,
+  "J_hi": 15,
+  "fric_lo": 16,
+  "fric_hi": 12,
+  "k_lo": 15,
+  "k_hi": 15,
+  "kt_lat": 16
+ },
+ "eval_s": 13.0,
+ "hold_iq": 0.16244999999999998,
+ "hold_du": 0.0724491266310215,
+ "hold_rms_deg": 0.12433687654282635,
+ "points": [
+  {
+   "t": 30.0,
+   "steps": 43064,
+   "strict": 0,
+   "eval_s": 2.7
+  },
+  {
+   "t": 60.0,
+   "steps": 79888,
+   "strict": 0,
+   "eval_s": 3.1
+  },
+  {
+   "t": 90.0,
+   "steps": 115696,
+   "strict": 30,
+   "eval_s": 3.6
+  },
+  {
+   "t": 120.0,
+   "steps": 150672,
+   "strict": 31,
+   "eval_s": 3.6
+  }
+ ],
+ "setup_s": 177.1
+}

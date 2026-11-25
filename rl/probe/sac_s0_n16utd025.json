@@ -1,0 +1,75 @@
+{
+ "algo": "sac",
+ "seed": 0,
+ "device": "cpu",
+ "n_envs": 16,
+ "budget": 120.0,
+ "train_time": 120.00087739995797,
+ "total_wall": 122.03450869998778,
+ "steps": 63120,
+ "gamma": 0.99,
+ "net": [
+  64,
+  64
+ ],
+ "armature": 0.005,
+ "task": "swingup",
+ "ctrl_hz": 50.0,
+ "timestep": 0.002,
+ "decim": 10,
+ "episode_steps": 250,
+ "tag": "n16utd025",
+ "fps": 525,
+ "threads": 1,
+ "kw_patch": {
+  "gradient_steps": 4
+ },
+ "vec": "subproc",
+ "points": [
+  {
+   "ret": -325.92930906389313,
+   "ret_min": -333.25325815702695,
+   "upright": 0.0,
+   "settled": 0.0,
+   "success": 0.0,
+   "t": 0.0,
+   "steps": 0
+  },
+  {
+   "ret": 295.15619687478755,
+   "ret_min": 293.7334830802037,
+   "upright": 0.8400000000000001,
+   "settled": 1.0,
+   "success": 1.0,
+   "t": 30.018,
+   "steps": 16176
+  },
+  {
+   "ret": 298.89220189367495,
+   "ret_min": 298.1893146223124,
+   "upright": 0.8472,
+   "settled": 1.0,
+   "success": 1.0,
+   "t": 60.028,
+   "steps": 31376
+  },
+  {
+   "ret": 294.6133212719224,
+   "ret_min": 294.24052984016424,
+   "upright": 0.844,
+   "settled": 1.0,
+   "success": 1.0,
+   "t": 90.052,
+   "steps": 47440
+  },
+  {
+   "ret": 289.9191478810643,
+   "ret_min": 289.57867223428667,
+   "upright": 0.8472,
+   "settled": 1.0,
+   "success": 1.0,
+   "t": 120.001,
+   "steps": 63120
+  }
+ ]
+}

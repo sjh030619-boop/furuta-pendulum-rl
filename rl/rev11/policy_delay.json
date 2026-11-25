@@ -1,0 +1,38 @@
+{
+ "source": "sac_rev11_delay_s2_best.zip",
+ "env": {
+  "xml": "C:\\Users\\JH\\Desktop\\Furuta_rev11_bent_MuJoCo\\furuta_rev11_bent_with_tip.xml",
+  "arm_armature": 0.005,
+  "tau_max": 1.0,
+  "arm_no_load_speed": 16.0
+ },
+ "delay_kw": {
+  "delay_range_ms": [
+   0.0,
+   40.0
+  ],
+  "hist": 2
+ },
+ "standard": {
+  "0": {
+   "success": 1.0,
+   "ret": 295.87573211010397,
+   "ret_min": 290.9938017356181
+  },
+  "20": {
+   "success": 1.0,
+   "ret": 292.5384933384084,
+   "ret_min": 288.1703555167272
+  },
+  "30": {
+   "success": 1.0,
+   "ret": 290.48381878881145,
+   "ret_min": 286.4442106734755
+  }
+ },
+ "recovery": {
+  "success": 1.0,
+  "ret": 329.0701937394581,
+  "ret_min": 282.1479184873744
+ }
+}

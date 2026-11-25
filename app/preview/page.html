@@ -1,0 +1,339 @@
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Pendulum Studio</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/app.css">
+<style>
+:root{
+  --page-bg:#F4F6F8; --page-fg:#16202A; --page-dim:#5A6775; --page-line:#DCE2E8; --page-accent:#0B5C86;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --page-bg:#13181D; --page-fg:#E8EDF2; --page-dim:#9AA7B4; --page-line:#2A333C; --page-accent:#6FB6DC; color-scheme: dark; } }
+:root[data-theme="dark"]{
+  --page-bg:#13181D; --page-fg:#E8EDF2; --page-dim:#9AA7B4; --page-line:#2A333C; --page-accent:#6FB6DC; color-scheme: dark; }
+body{
+  background:var(--page-bg); color:var(--page-fg); margin:0;
+  font-family:'Pretendard Variable',Pretendard,Inter,'Noto Sans KR','Malgun Gothic',system-ui,sans-serif;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));
+  padding-right:max(16px, env(safe-area-inset-right, 0px));
+  padding-block:22px 28px;
+}
+.wrap{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+.lede h1{margin:0 0 6px;font-size:clamp(20px,3vw,27px);letter-spacing:-.02em;text-wrap:balance}
+.lede p{margin:0;color:var(--page-dim);font-size:14.5px;line-height:1.6;max-width:62ch}
+.lede b{color:var(--page-fg);font-weight:600}
+.tipbar{display:flex;flex-wrap:wrap;gap:8px;font-size:12.5px;color:var(--page-dim)}
+.tipbar span{border:1px solid var(--page-line);border-radius:99px;padding:3px 11px}
+.tipbar span b{color:var(--page-accent);font-weight:600}
+.frame{
+  overflow-x:auto;overflow-y:hidden;border:1px solid var(--page-line);border-radius:12px;
+  background:#EDF1F0;box-shadow:0 10px 30px -18px rgba(0,0,0,.45);
+}
+.appwin{min-width:1120px;height:770px}
+.appwin .modal-back{position:absolute;inset:0}
+.frame{position:relative}
+.foot{color:var(--page-dim);font-size:12.5px;line-height:1.7}
+.foot code{background:rgba(127,127,127,.16);padding:1px 5px;border-radius:4px;font-size:12px}
+</style>
+<div class="wrap">
+<div class="lede">
+<h1>Pendulum Studio</h1>
+<p>교육용 회전 도립 진자 키트로 강화학습을 가르치는 Electron 앱의 실제 화면입니다.
+화면 배치와 블록 모양은 <b>엔트리</b>를 따르고, 활동 순서는 학습지와 짝을 이룹니다.
+진자는 검증된 MuJoCo 모델에서 뽑은 동역학으로 움직이고, 정책은 실제로 학습한 신경망 가중치입니다.</p>
+</div>
+<div class="tipbar">
+<span><b>살펴보기</b> 미리 배운 에이전트를 실행해 보세요</span>
+<span><b>블록</b> 탭에서 '자유롭게 만들기'를 누르고 블록을 끌어다 쌓아 보세요</span>
+<span><b>▶ 시작하기</b> 를 누르면 배우고 나서 시험합니다</span>
+<span><b>예시 규칙</b> 탭에서 완성된 규칙을 불러올 수 있습니다</span>
+<span>규칙을 바꾸면 <b>움직임이 실제로 달라집니다</b></span>
+</div>
+<div class="frame"><div class="appwin">
+<!-- ───────── 상단 메뉴 ───────── -->
+<header class="menubar">
+  <div class="mb-logo">
+    <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
+      <circle cx="11" cy="4.5" r="3.2" fill="#fff"/>
+      <rect x="9.8" y="6.5" width="2.4" height="9" rx="1.2" fill="#fff" opacity=".92"/>
+      <rect x="3" y="15" width="16" height="3.4" rx="1.7" fill="#fff" opacity=".75"/>
+    </svg>
+    Pendulum Studio
+  </div>
+  <input class="mb-title" id="projName" value="회전 도립 진자 수업" aria-label="작품 이름">
+  <button class="mb-item" id="mNew">새로 만들기</button>
+  <button class="mb-item" id="mOpen">불러오기</button>
+  <button class="mb-item" id="mSave">저장하기</button>
+  <button class="mb-item ico" id="mUndo" title="되돌리기 (Ctrl+Z)" aria-label="되돌리기"><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M7.5 4.5l-4 4 4 4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 8.5h7a4.5 4.5 0 0 1 0 9H8.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <button class="mb-item ico" id="mRedo" title="다시 실행 (Ctrl+Y)" aria-label="다시 실행"><svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M12.5 4.5l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 8.5H9a4.5 4.5 0 0 0 0 9h2.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <button class="mb-item" id="mHelp">도움말</button>
+  <input type="file" id="fileIn" accept=".json,application/json" hidden>
+  <div class="mb-spacer"></div>
+  <div class="mb-mode" id="modeSeg" role="group" aria-label="만드는 방법">
+    <button data-m="guide" aria-pressed="true">따라 하기</button>
+    <button data-m="free" aria-pressed="false">자유롭게 만들기</button>
+  </div>
+  <button class="mb-conn" id="mConn"><span class="dot"></span><span id="connName">키트 연결하기</span></button>
+</header>
+
+<!-- ───────── 활동 순서 (학습지와 짝) ───────── -->
+<nav class="guide" aria-label="활동 순서">
+  <span class="gl0">활동 순서</span>
+  <button class="gstep" data-step="1"><i>1</i>살펴보기</button>
+  <button class="gstep" data-step="2"><i>2</i>점수 규칙 만들기</button>
+  <button class="gstep" data-step="3"><i>3</i>가르치고 시험하기</button>
+  <span class="ghint" id="guideHint"></span>
+  <label class="chk" id="wroteBox"><input type="checkbox" id="wrote">학습지에 예상을 적었어요</label>
+</nav>
+
+<div class="body">
+  <!-- ───────── 왼쪽: 실행 화면 · 시작하기 · 보조 창 ───────── -->
+  <section class="leftcol">
+    <section class="card stage" data-stage="a"></section>
+
+    <div class="card runbar">
+      <button class="go" id="btnStart">▶ 시작하기</button>
+      <button class="stop" id="btnStop" disabled>■ 정지하기</button>
+      <span class="runmsg" id="runMsg"></span>
+      <div class="seg env" id="envSeg" role="group" aria-label="실행 위치">
+        <button data-env="sim" aria-pressed="true">시뮬레이션</button>
+        <button data-env="kit" aria-pressed="false">실제 키트</button>
+      </div>
+    </div>
+
+    <section class="card sub">
+      <div class="tabs" id="subTabs">
+        <button data-sub="res" aria-pressed="true">결과</button>
+        <button data-sub="kit" aria-pressed="false">키트 상태</button>
+        <button data-sub="help" aria-pressed="false">블록 도움말</button>
+      </div>
+      <div class="subpane on" data-pane="res">
+        <div class="learnrow">
+          <span class="lstate" id="learnState">모델없음</span>
+          <div class="bar"><div id="trainBar"></div></div>
+          <span class="muted" id="trainMsg"></span>
+        </div>
+        <div class="banner" id="resBanner" hidden></div>
+        <div class="metrics" id="metrics">
+          <div>세우는 데 걸린 시간<b id="mUp">-</b></div>
+          <div>서 있을 때 모터 힘<b id="mForce">-</b></div>
+          <div>팔이 돌아간 정도<b id="mArm">-</b></div>
+        </div>
+        <div class="logwrap">
+          <table>
+            <thead><tr><th title="기록을 누르면 그 시도가 그래프와 결과의 비교 대상이 됩니다">기록 <small>(눌러서 비교)</small></th><th>규칙</th><th>시뮬레이션</th><th>키트</th><th class="num">힘</th><th class="num">팔</th></tr></thead>
+            <tbody id="log"><tr><td colspan="6" class="muted">아직 기록이 없습니다. 시작하기를 눌러 보세요.</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="subpane" data-pane="kit">
+        <p class="kitline"><span class="dot" id="kitDot"></span><b id="kitState">키트가 연결되지 않았습니다</b></p>
+        <p class="muted" id="kitNote">USB 케이블로 키트를 연결한 뒤 아래 버튼을 누르세요.</p>
+        <button class="big alt" id="kitConnect">키트 연결하기</button>
+        <p class="muted">키트 맞추기(수평·마찰·진자 확인)는 키트 연결 프로그램과 함께 준비 중입니다.</p>
+      </div>
+      <div class="subpane" data-pane="help">
+        <p class="helpname" id="helpName">블록을 눌러 보세요</p>
+        <p class="muted" id="helpText">블록을 누르면 여기에 설명이 나옵니다.</p>
+      </div>
+    </section>
+  </section>
+
+  <!-- ───────── 오른쪽: 살펴보기 · 블록 · 그래프 · 예시 규칙 ───────── -->
+  <section class="rightcol">
+    <div class="etabs" id="mainTabs">
+      <button data-tab="intro" aria-pressed="true">살펴보기</button>
+      <button data-tab="blocks" aria-pressed="false">블록</button>
+      <button data-tab="graphs" aria-pressed="false">그래프</button>
+      <button data-tab="examples" aria-pressed="false">예시 규칙</button>
+      <span class="modelnote" id="modelNote"></span>
+    </div>
+    <div class="work">
+      <div class="mainpane on" data-pane="intro">
+        <div class="intro">
+          <section class="card runcard">
+            <div class="runtext">
+              <h2><span class="stepno">1</span>미리 배운 에이전트를 실행해 봅시다</h2>
+              <p class="muted">세우는 방법은 아무도 알려 주지 않았습니다. 여러 번 해 보면서 보상(점수)으로 배웠습니다. 왼쪽 실행 화면에서 움직임을 보세요.</p>
+              <p id="preResult" class="rule" hidden></p>
+            </div>
+            <div class="runside">
+              <button class="big" id="runPre">미리 배운 에이전트 실행하기</button>
+              <p class="sheet">학습지 2쪽: 실행 결과와, 내 예상과 달랐던 점을 적습니다.</p>
+            </div>
+          </section>
+          <section class="card">
+            <h2><span class="stepno">2</span>키트를 살펴봅시다</h2>
+            <p class="muted">왼쪽 실행 화면에 적힌 번호와 짝을 이룹니다. 실행 화면을 끌면 돌려 볼 수 있습니다.</p>
+            <ul class="parts">
+              <li><i>1</i><div><b>모터</b><span>받침 안에 있고, 팔을 돌리는 힘을 냅니다. 에이전트의 <em class="pill action">행동</em>입니다.</span></div></li>
+              <li><i>2</i><div><b>팔</b><span>모터가 돌리는 가로 막대입니다.</span></div></li>
+              <li><i>3</i><div><b>진자</b><span>팔 끝에 달려 자유롭게 도는 막대입니다. 이것을 거꾸로 세우는 것이 목표입니다.</span></div></li>
+              <li><i>4</i><div><b>각도 센서</b><span>진자가 얼마나 기울었는지 잽니다. 에이전트가 보는 <em class="pill state">상태</em>입니다.</span></div></li>
+            </ul>
+          </section>
+          <section class="card">
+            <h2><span class="stepno">3</span>강화학습의 일곱 가지 말</h2>
+            <svg class="loop" viewBox="0 0 400 178" role="img" aria-label="에이전트는 상태를 보고 정책에 따라 행동하고, 환경에서 보상을 받습니다. 가치는 앞으로 받을 보상의 예상입니다.">
+              <rect x="2" y="6" width="170" height="166" rx="10" fill="#E3EEFA" stroke="#14212B" stroke-width="1.5"/>
+              <rect x="12" y="15" width="62" height="20" rx="10" fill="#A7CFF1" stroke="#14212B" stroke-width="1.2"/><text x="43" y="29.5" font-size="12" font-weight="800" text-anchor="middle">에이전트</text>
+              <text x="80" y="29" font-size="10.5" fill="#444">배우는 인공지능</text>
+              <rect x="12" y="46" width="150" height="54" rx="7" fill="#fff" stroke="#14212B"/>
+              <rect x="20" y="53" width="42" height="18" rx="9" fill="#FFDC91" stroke="#14212B"/><text x="41" y="66.5" font-size="11.5" font-weight="800" text-anchor="middle">정책</text>
+              <text x="20" y="90" font-size="10.5">상태를 보고 행동을 고르는 방법</text>
+              <rect x="12" y="108" width="150" height="54" rx="7" fill="#fff" stroke="#14212B"/>
+              <rect x="20" y="115" width="42" height="18" rx="9" fill="#FFDC91" stroke="#14212B"/><text x="41" y="128.5" font-size="11.5" font-weight="800" text-anchor="middle">가치</text>
+              <text x="20" y="152" font-size="10.5">앞으로 받을 보상의 예상</text>
+              <rect x="272" y="6" width="126" height="166" rx="10" fill="#EAF2DC" stroke="#14212B" stroke-width="1.5"/>
+              <rect x="282" y="15" width="42" height="20" rx="10" fill="#D8E6BC" stroke="#14212B" stroke-width="1.2"/><text x="303" y="29.5" font-size="12" font-weight="800" text-anchor="middle">환경</text>
+              <text x="282" y="62" font-size="10.5" fill="#444">에이전트가</text><text x="282" y="77" font-size="10.5" fill="#444">움직이는 곳</text>
+              <text x="282" y="112" font-size="11.5" font-weight="600">진자 키트,</text><text x="282" y="128" font-size="11.5" font-weight="600">시뮬레이션</text>
+              <g font-size="9.5" text-anchor="middle" fill="#444">
+                <rect x="201" y="14" width="42" height="18" rx="9" fill="#F9CCCF" stroke="#14212B"/><text x="222" y="27.5" font-size="11.5" font-weight="800" fill="#14212B">행동</text>
+                <path d="M178 40 H265 m-6 -4 l6 4 -6 4" fill="none" stroke="#14212B" stroke-width="1.6"/><text x="222" y="54">모터를 움직인다</text>
+                <rect x="201" y="68" width="42" height="18" rx="9" fill="#FFC59E" stroke="#14212B"/><text x="222" y="81.5" font-size="11.5" font-weight="800" fill="#14212B">상태</text>
+                <path d="M266 94 H179 m6 -4 l-6 4 6 4" fill="none" stroke="#14212B" stroke-width="1.6"/><text x="222" y="108">진자 높이, 빠르기</text>
+                <rect x="201" y="122" width="42" height="18" rx="9" fill="#FFDC91" stroke="#14212B"/><text x="222" y="135.5" font-size="11.5" font-weight="800" fill="#14212B">보상</text>
+                <path d="M266 148 H179 m6 -4 l-6 4 6 4" fill="none" stroke="#14212B" stroke-width="1.6"/><text x="222" y="162">점수</text>
+              </g>
+            </svg>
+            <dl class="words">
+              <dt><span class="pill agent">에이전트</span></dt><dd>배우는 인공지능</dd>
+              <dt><span class="pill env">환경</span></dt><dd>에이전트가 움직이는 곳 (진자 키트, 시뮬레이션)</dd>
+              <dt><span class="pill state">상태</span></dt><dd>지금 어떤지 (진자 높이, 빠르기)</dd>
+              <dt><span class="pill action">행동</span></dt><dd>에이전트가 하는 일 (모터 힘)</dd>
+              <dt><span class="pill reward">보상</span></dt><dd>잘했는지 알려 주는 점수</dd>
+              <dt><span class="pill policy">정책</span></dt><dd>상태를 보고 행동을 고르는 방법</dd>
+              <dt><span class="pill value">가치</span></dt><dd>앞으로 받을 보상의 예상</dd>
+            </dl>
+            <p class="muted">실행 화면 아래 네 칸(상태·행동·보상·가치)에서 실제 값을 볼 수 있습니다. 학습지 2쪽 그림과 같습니다.</p>
+            <button class="big alt" id="toBlocks">점수 규칙 만들러 가기</button>
+          </section>
+        </div>
+      </div>
+
+      <div class="mainpane" data-pane="blocks">
+        <aside class="rail" id="rail"></aside>
+        <div class="palette" id="palette"></div>
+        <div class="boardhost" id="boardHost"></div>
+      </div>
+
+      <div class="mainpane" data-pane="graphs">
+        <div class="graphs">
+          <div class="glegend">
+            <span><i class="sw cur"></i>이번</span>
+            <span id="gPrev" hidden><i class="sw prev"></i>비교</span>
+            <span class="muted" id="gNote"></span>
+          </div>
+          <div class="ggrid">
+            <section class="card graph">
+              <div class="hd">배우면서 받은 점수<span>세대가 지날수록 오릅니다</span></div>
+              <div class="chart" id="chLearn"></div>
+            </section>
+            <section class="card graph">
+              <div class="hd">진자 높이<span>100 이 똑바로 선 상태</span></div>
+              <div class="chart" id="chHeight"></div>
+            </section>
+            <section class="card graph">
+              <div class="hd">모터 힘<span>0 = 쉼, 100 = 가장 세게</span></div>
+              <div class="chart" id="chForce"></div>
+            </section>
+            <section class="card graph">
+              <div class="hd">팔이 돌아간 정도<span>처음 자리에서 몇 바퀴</span></div>
+              <div class="chart" id="chArm"></div>
+            </section>
+          </div>
+          <p class="sheet">학습지 3쪽: 결과와 그래프 모양을 옮겨 적습니다. 그래프 위에 마우스를 올리면 그 시각의 값이 보입니다.</p>
+        </div>
+      </div>
+
+      <div class="mainpane" data-pane="examples">
+        <div class="examples" id="examples"></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="safe">
+  <span>팔이 너무 빨리 돌면 모터가 자동으로 멈춥니다. 이 안전 동작은 끌 수 없습니다.</span>
+  <span class="alert" id="alertLine"></span>
+</div>
+
+<!-- ───────── 키트 연결 ───────── -->
+<div class="modal-back" id="devModal">
+  <div class="modal" role="dialog" aria-label="키트 연결하기">
+    <header>키트 연결하기<button id="devClose" aria-label="닫기">×</button></header>
+    <div class="grid" id="devGrid"></div>
+    <footer>
+      <span class="note" id="devNote"></span>
+      <button class="big alt" id="devRefresh">다시 찾기</button>
+      <button class="big" id="devConnect" disabled>연결</button>
+    </footer>
+  </div>
+</div>
+
+<template id="stageTpl">
+  <div class="stagehead">
+    <span class="pill env">환경</span><span class="where">대기 중</span>
+    <div class="phase"><span class="ph">흔들어 올리기</span><span class="ph">에너지 모으기</span><span class="ph">균형 잡기</span></div>
+    <button class="bigbtn" aria-pressed="false" title="실행 화면만 크게 봅니다"><svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path d="M3 8V3h5M17 8V3h-5M3 12v5h5M17 12v5h-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>크게 보기</span></button>
+  </div>
+  <div class="view">
+    <svg viewBox="0 0 800 580" role="img" aria-label="진자 키트를 비스듬히 위에서 본 화면">
+      <polygon class="floor" fill="#E6ECEB"/>
+      <ellipse class="shadow" rx="14" ry="7" fill="#14212B" opacity=".18"/>
+      <g class="base"></g>
+      <g class="tower"></g>
+      <polyline class="orbit" fill="none" stroke="#8FA2AB" stroke-width="2" stroke-dasharray="6 6"/>
+      <g class="rodg">
+        <line class="ghost" stroke="#3b6de4" stroke-width="3" stroke-dasharray="9 9"/>
+        <line class="rodO" stroke="#4A4640" stroke-width="10" stroke-linecap="round"/>
+        <line class="rod" stroke="#D6D2CB" stroke-width="6" stroke-linecap="round"/>
+        <circle class="bob" r="10" fill="#C2410C" stroke="#4A4640" stroke-width="2"/>
+      </g>
+      <g class="armg">
+        <line class="armO" stroke="#4A4640" stroke-width="10" stroke-linecap="round"/>
+        <line class="arm" stroke="#D6D2CB" stroke-width="6" stroke-linecap="round"/>
+        <line class="holder" stroke="#4A90D9" stroke-width="17" stroke-linecap="round"/>
+        <circle class="sensor" r="10" fill="#F4F2EE" stroke="#4A4640" stroke-width="2"/>
+        <circle class="pivot" r="6" fill="#D6D2CB" stroke="#4A4640" stroke-width="2"/>
+      </g>
+      <g class="nums"></g>
+    </svg>
+    <div class="gauge" aria-hidden="true">
+      <div class="gt"><span class="gtop">꼭대기</span><div class="gfill"></div><div class="gpeak" hidden><span>최고</span></div></div>
+      <span class="gl">진자 높이</span>
+    </div>
+  </div>
+  <div class="terms">
+    <div class="tm"><span class="hd"><span class="pill state">상태</span>기울기</span><span class="val"><b class="deg">180°</b><span class="spd">0.0바퀴/초</span></span></div>
+    <div class="tm"><span class="hd"><span class="pill action">행동</span>모터 힘</span><span class="val"><div class="mid"><div class="ubar"></div></div></span></div>
+    <div class="tm"><span class="hd"><span class="pill reward">보상</span>지금 점수</span><span class="val"><b class="rw">0</b></span></div>
+    <div class="tm"><span class="hd"><span class="pill value">가치</span>앞으로 예상</span><span class="val"><div class="bar"><div class="vbar"></div></div></span></div>
+  </div>
+  <div class="stagefoot">
+    <div class="bar"><div class="tbar"></div></div>
+    <span><span class="time">0.0</span> / <span class="tend">10.0</span>초</span>
+    <span class="res"></span>
+  </div>
+</template>
+
+<script src="assets/model.js?v=20261125i"></script>
+<script src="assets/policies.js?v=20261125i"></script>
+<script src="js/physics.js?v=20261125i"></script>
+<script src="js/blockdefs.js?v=20261125i"></script>
+<script src="js/reward.js?v=20261125i"></script>
+<script src="js/policy.js?v=20261125i"></script>
+<script src="js/learn.js?v=20261125i"></script>
+<script src="js/device.js?v=20261125i"></script>
+<script src="js/charts.js?v=20261125i"></script>
+<script src="js/stage.js?v=20261125i"></script>
+<script src="js/examples.js?v=20261125i"></script>
+<script src="js/blocks.js?v=20261125i"></script>
+<script src="js/app.js?v=20261125i"></script></div></div>
+<p class="foot">웹 미리보기라 시리얼 포트가 없어 실제 키트 연결은 비활성입니다. 데스크톱 앱에서는
+<code>main.js</code>가 포트를 직접 잡습니다. 기본 규칙 아홉 조합은 모두 MuJoCo에서 따로 학습한
+정책이 들어 있고, 지연·잡음을 랜덤화해 학습했으므로 관측에 최근 명령 두 개가 포함됩니다(6 → 8개).
+<b>빠르기 강하게 + 힘 아끼기</b> 두 조합은 일부러 못 세웁니다 &mdash; 진자 속도를 세게 깎으면
+스윙업에 필요한 에너지를 넣을 수 없기 때문이고, 학습지가 기록하게 하는 결과가 바로 이것입니다.</p>
+</div>

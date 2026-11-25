@@ -1,0 +1,19 @@
+{
+ "source": "sac_rev11_s0_best.zip",
+ "env": {
+  "xml": "C:\\Users\\JH\\Desktop\\Furuta_rev11_bent_MuJoCo\\furuta_rev11_bent_with_tip.xml",
+  "arm_armature": 0.005,
+  "tau_max": 1.0,
+  "arm_no_load_speed": 16.0
+ },
+ "standard": {
+  "success": 1.0,
+  "ret": 296.8030094680617,
+  "ret_min": 292.6665012226698
+ },
+ "recovery": {
+  "success": 1.0,
+  "ret": 330.3916872805172,
+  "ret_min": 282.4073062604169
+ }
+}

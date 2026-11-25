@@ -1,0 +1,392 @@
+[
+ {
+  "t": 0,
+  "strict": 0,
+  "loose": 0,
+  "per": {
+   "nom": 0,
+   "J_lo": 0,
+   "J_hi": 0,
+   "fric_lo": 0,
+   "fric_hi": 0,
+   "k_lo": 0,
+   "k_hi": 0,
+   "kt_lat": 0
+  }
+ },
+ {
+  "t": 60,
+  "strict": 43,
+  "loose": 58,
+  "per": {
+   "nom": 8,
+   "J_lo": 7,
+   "J_hi": 7,
+   "fric_lo": 9,
+   "fric_hi": 0,
+   "k_lo": 2,
+   "k_hi": 8,
+   "kt_lat": 2
+  }
+ },
+ {
+  "t": 120,
+  "strict": 112,
+  "loose": 122,
+  "per": {
+   "nom": 16,
+   "J_lo": 15,
+   "J_hi": 16,
+   "fric_lo": 16,
+   "fric_hi": 3,
+   "k_lo": 16,
+   "k_hi": 14,
+   "kt_lat": 16
+  }
+ },
+ {
+  "t": 180,
+  "strict": 128,
+  "loose": 128,
+  "per": {
+   "nom": 16,
+   "J_lo": 16,
+   "J_hi": 16,
+   "fric_lo": 16,
+   "fric_hi": 16,
+   "k_lo": 16,
+   "k_hi": 16,
+   "kt_lat": 16
+  }
+ },
+ {
+  "t": 240,
+  "strict": 125,
+  "loose": 113,
+  "per": {
+   "nom": 16,
+   "J_lo": 16,
+   "J_hi": 16,
+   "fric_lo": 16,
+   "fric_hi": 13,
+   "k_lo": 16,
+   "k_hi": 16,
+   "kt_lat": 16
+  }
+ },
+ {
+  "t": 300,
+  "strict": 128,
+  "loose": 128,
+  "per": {
+   "nom": 16,
+   "J_lo": 16,
+   "J_hi": 16,
+   "fric_lo": 16,
+   "fric_hi": 16,
+   "k_lo": 16,
+   "k_hi": 16,
+   "kt_lat": 16
+  }
+ },
+ {
+  "t": 360,
+  "strict": 128,
+  "loose": 128,
+  "per": {
+   "nom": 16,
+   "J_lo": 16,
+   "J_hi": 16,
+   "fric_lo": 16,
+   "fric_hi": 16,
+   "k_lo": 16,
+   "k_hi": 16,
+   "kt_lat": 16
+  }
+ },
+ {
+  "t": 420,
+  "strict": 61,
+  "loose": 128,
+  "per": {
+   "nom": 7,
+   "J_lo": 14,
+   "J_hi": 3,
+   "fric_lo": 0,
+   "fric_hi": 16,
+   "k_lo": 0,
+   "k_hi": 16,
+   "kt_lat": 5
+  }
+ },
+ {
+  "t": 480,
+  "strict": 69,
+  "loose": 128,
+  "per": {
+   "nom": 8,
+   "J_lo": 11,
+   "J_hi": 10,
+   "fric_lo": 7,
+   "fric_hi": 9,
+   "k_lo": 12,
+   "k_hi": 7,
+   "kt_lat": 5
+  }
+ },
+ {
+  "t": 540,
+  "strict": 128,
+  "loose": 128,
+  "per": {
+   "nom": 16,
+   "J_lo": 16,
+   "J_hi": 16,
+   "fric_lo": 16,
+   "fric_hi": 16,
+   "k_lo": 16,
+   "k_hi": 16,
+   "kt_lat": 16
+  }
+ },
+ {
+  "t": 600,
+  "strict": 128,
+  "loose": 128,
+  "per": {
+   "nom": 16,
+   "J_lo": 16,
+   "J_hi": 16,
+   "fric_lo": 16,
+   "fric_hi": 16,
+   "k_lo": 16,
+   "k_hi": 16,
+   "kt_lat": 16
+  }
+ },
+ {
+  "t": 660,
+  "strict": 128,
+  "loose": 128,
+  "per": {
+   "nom": 16,
+   "J_lo": 16,
+   "J_hi": 16,
+   "fric_lo": 16,
+   "fric_hi": 16,
+   "k_lo": 16,
+   "k_hi": 16,
+   "kt_lat": 16
+  }
+ },
+ {
+  "t": 720,
+  "strict": 128,
+  "loose": 128,
+  "per": {
+   "nom": 16,
+   "J_lo": 16,
+   "J_hi": 16,
+   "fric_lo": 16,
+   "fric_hi": 16,
+   "k_lo": 16,
+   "k_hi": 16,
+   "kt_lat": 16
+  }
+ },
+ {
+  "t": 780,
+  "strict": 128,
+  "loose": 128,
+  "per": {
+   "nom": 16,
+   "J_lo": 16,
+   "J_hi": 16,
+   "fric_lo": 16,
+   "fric_hi": 16,
+   "k_lo": 16,
+   "k_hi": 16,
+   "kt_lat": 16
+  }
+ },
+ {
+  "t": 840,
+  "strict": 124,
+  "loose": 124,
+  "per": {
+   "nom": 16,
+   "J_lo": 16,
+   "J_hi": 16,
+   "fric_lo": 16,
+   "fric_hi": 12,
+   "k_lo": 16,
+   "k_hi": 16,
+   "kt_lat": 16
+  }
+ },
+ {
+  "t": 900,
+  "strict": 128,
+  "loose": 128,
+  "per": {
+   "nom": 16,
+   "J_lo": 16,
+   "J_hi": 16,
+   "fric_lo": 16,
+   "fric_hi": 16,
+   "k_lo": 16,
+   "k_hi": 16,
+   "kt_lat": 16
+  }
+ },
+ {
+  "t": 960,
+  "strict": 128,
+  "loose": 128,
+  "per": {
+   "nom": 16,
+   "J_lo": 16,
+   "J_hi": 16,
+   "fric_lo": 16,
+   "fric_hi": 16,
+   "k_lo": 16,
+   "k_hi": 16,
+   "kt_lat": 16
+  }
+ },
+ {
+  "t": 1020,
+  "strict": 127,
+  "loose": 128,
+  "per": {
+   "nom": 16,
+   "J_lo": 16,
+   "J_hi": 16,
+   "fric_lo": 16,
+   "fric_hi": 15,
+   "k_lo": 16,
+   "k_hi": 16,
+   "kt_lat": 16
+  }
+ },
+ {
+  "t": 1080,
+  "strict": 128,
+  "loose": 128,
+  "per": {
+   "nom": 16,
+   "J_lo": 16,
+   "J_hi": 16,
+   "fric_lo": 16,
+   "fric_hi": 16,
+   "k_lo": 16,
+   "k_hi": 16,
+   "kt_lat": 16
+  }
+ },
+ {
+  "t": 1140,
+  "strict": 128,
+  "loose": 128,
+  "per": {
+   "nom": 16,
+   "J_lo": 16,
+   "J_hi": 16,
+   "fric_lo": 16,
+   "fric_hi": 16,
+   "k_lo": 16,
+   "k_hi": 16,
+   "kt_lat": 16
+  }
+ },
+ {
+  "t": 1200,
+  "strict": 128,
+  "loose": 128,
+  "per": {
+   "nom": 16,
+   "J_lo": 16,
+   "J_hi": 16,
+   "fric_lo": 16,
+   "fric_hi": 16,
+   "k_lo": 16,
+   "k_hi": 16,
+   "kt_lat": 16
+  }
+ },
+ {
+  "t": 1260,
+  "strict": 128,
+  "loose": 128,
+  "per": {
+   "nom": 16,
+   "J_lo": 16,
+   "J_hi": 16,
+   "fric_lo": 16,
+   "fric_hi": 16,
+   "k_lo": 16,
+   "k_hi": 16,
+   "kt_lat": 16
+  }
+ },
+ {
+  "t": 1320,
+  "strict": 127,
+  "loose": 128,
+  "per": {
+   "nom": 16,
+   "J_lo": 16,
+   "J_hi": 16,
+   "fric_lo": 16,
+   "fric_hi": 15,
+   "k_lo": 16,
+   "k_hi": 16,
+   "kt_lat": 16
+  }
+ },
+ {
+  "t": 1380,
+  "strict": 128,
+  "loose": 128,
+  "per": {
+   "nom": 16,
+   "J_lo": 16,
+   "J_hi": 16,
+   "fric_lo": 16,
+   "fric_hi": 16,
+   "k_lo": 16,
+   "k_hi": 16,
+   "kt_lat": 16
+  }
+ },
+ {
+  "t": 1440,
+  "strict": 128,
+  "loose": 128,
+  "per": {
+   "nom": 16,
+   "J_lo": 16,
+   "J_hi": 16,
+   "fric_lo": 16,
+   "fric_hi": 16,
+   "k_lo": 16,
+   "k_hi": 16,
+   "kt_lat": 16
+  }
+ },
+ {
+  "t": 1500,
+  "strict": 127,
+  "loose": 128,
+  "per": {
+   "nom": 16,
+   "J_lo": 16,
+   "J_hi": 16,
+   "fric_lo": 16,
+   "fric_hi": 15,
+   "k_lo": 16,
+   "k_hi": 16,
+   "kt_lat": 16
+  }
+ }
+]

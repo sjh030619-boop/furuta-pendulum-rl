@@ -1,0 +1,19 @@
+진자 정지 0.5 s (RAW 2037)
+=== 재시험 1  base  09:57:10
+종료: iq 0 0.02 s (마지막 속도 -10 dps) -> 0x81 -> 0x78 -> 0x80 (0x9C 속도 -1 dps 확인)
+마지막 0x92 각도 저장: 40534.090000000004
+마찰 기록:  pi_host/logs/stage2_20261124/r1b__base__095710_fric.json
+로그 601행 저장: pi_host/logs/stage2_20261124/r1b__base__095710.csv
+진자 정지 19.1 s (RAW 2031)
+=== 재시험 2  base  09:57:48
+종료: iq 0 0.02 s (마지막 속도 18 dps) -> 0x81 -> 0x78 -> 0x80 (0x9C 속도 1 dps 확인)
+마지막 0x92 각도 저장: 40746.05
+마찰 기록:  pi_host/logs/stage2_20261124/r2b__base__095748_fric.json
+로그 601행 저장: pi_host/logs/stage2_20261124/r2b__base__095748.csv
+진자 정지 19.1 s (RAW 2038)
+=== 재시험 3  base  09:58:26
+종료: iq 0 0.02 s (마지막 속도 -39 dps) -> 0x81 -> 0x78 -> 0x80 (0x9C 속도 -24 dps 확인)
+마지막 0x92 각도 저장: 40946.82
+마찰 기록:  pi_host/logs/stage2_20261124/r3b__base__095826_fric.json
+로그 601행 저장: pi_host/logs/stage2_20261124/r3b__base__095826.csv
+끝

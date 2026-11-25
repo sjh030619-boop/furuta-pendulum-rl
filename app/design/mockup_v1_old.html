@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Pendulum Studio 화면 시안</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --ink:#14212B; --muted:#5F6E78; --line:#D3DBDD; --bg:#F3F6F7; --card:#fff; --brand:#3B82D6;
+  --c-start:#00b400; --c-flow:#19baea; --c-judge:#4562f5; --c-calc:#f4af18; --c-score:#dd47d8; --c-kit:#00b6b1; --c-ai:#8222ff;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Pretendard,"Malgun Gothic",sans-serif;color:var(--ink);background:var(--bg);width:1366px;height:768px;overflow:hidden;font-size:14px}
+.menu{height:46px;background:var(--brand);color:#fff;display:flex;align-items:center;gap:6px;padding:0 14px}
+.menu .logo{font-weight:800;font-size:16px;margin-right:10px}
+.menu .it{padding:6px 10px;border-radius:6px;font-weight:600;font-size:13.5px}
+.menu input{height:30px;border:0;border-radius:6px;padding:0 10px;width:210px;font:inherit;font-weight:600}
+.menu .sp{flex:1}
+.seg{display:inline-flex;background:#fff;border-radius:8px;overflow:hidden;border:1.5px solid var(--ink)}
+.seg span{padding:6px 12px;font-weight:700;font-size:13px;color:var(--ink)}
+.seg .on{background:var(--ink);color:#fff}
+.conn{background:#fff;color:var(--ink);border-radius:8px;padding:6px 12px;font-weight:800;font-size:13px;display:flex;align-items:center;gap:7px}
+.dot{width:9px;height:9px;border-radius:50%;background:#19a34a}
+.guide{height:36px;background:#E7EFF8;display:flex;align-items:center;gap:8px;padding:0 14px;font-size:13px;border-bottom:1px solid var(--line)}
+.guide b{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:14px;font-weight:700;color:var(--muted)}
+.guide b i{font-style:normal;width:18px;height:18px;border-radius:50%;border:1.5px solid currentColor;display:inline-flex;align-items:center;justify-content:center;font-size:11px}
+.guide b.on{background:#fff;color:var(--ink);box-shadow:0 0 0 1.5px var(--ink)}
+.guide b.done{color:#19a34a}
+.guide .hint{margin-left:auto;color:var(--muted)}
+.wrap{display:flex;height:calc(768px - 46px - 36px - 26px);gap:10px;padding:10px}
+.left{width:430px;display:flex;flex-direction:column;gap:10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px}
+.stage{height:268px;position:relative;overflow:hidden}
+.stage .tag{position:absolute;left:10px;top:8px;font-size:12px;font-weight:700;color:var(--muted)}
+.stage .chips{position:absolute;left:8px;right:8px;bottom:8px;display:flex;gap:6px}
+.chip{flex:1;border:1px solid var(--line);border-radius:7px;padding:4px 7px;font-size:11.5px;background:#fff}
+.chip b{display:block;font-size:14px}
+.pill{font-size:10.5px;font-weight:800;border-radius:9px;padding:1px 6px;margin-right:4px;border:1px solid var(--ink)}
+.runbar{display:flex;align-items:center;gap:8px;padding:8px}
+.go{background:var(--c-start);color:#fff;font-weight:800;font-size:15px;border-radius:9px;padding:10px 18px}
+.stop{border:1.5px solid var(--line);color:var(--muted);font-weight:700;border-radius:9px;padding:9px 12px}
+.sub{flex:1;display:flex;flex-direction:column;min-height:0}
+.tabs{display:flex;border-bottom:1px solid var(--line)}
+.tabs span{padding:8px 14px;font-weight:700;font-size:13px;color:var(--muted)}
+.tabs .on{color:var(--ink);box-shadow:inset 0 -3px 0 var(--ink)}
+.res{padding:10px 12px;display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.res div{border:1px solid var(--line);border-radius:8px;padding:6px 9px;font-size:12px;color:var(--muted)}
+.res div b{display:block;color:var(--ink);font-size:16px}
+.res .ok{grid-column:1/3;background:#E9F7EE;border-color:#9AD6AE;color:#136B32;font-weight:700;font-size:13px}
+table{width:calc(100% - 24px);margin:0 12px 8px;border-collapse:collapse;font-size:12px}
+td,th{border-bottom:1px solid var(--line);padding:4px 3px;text-align:left}
+th{color:var(--muted);font-weight:600}
+.right{flex:1;display:flex;flex-direction:column;min-width:0}
+.right .tabs{background:#fff;border:1px solid var(--line);border-bottom:0;border-radius:10px 10px 0 0}
+.work{flex:1;display:flex;background:#fff;border:1px solid var(--line);border-radius:0 0 10px 10px;min-height:0}
+.cats{width:74px;border-right:1px solid var(--line);padding:8px 0;display:flex;flex-direction:column;gap:3px;align-items:center}
+.cat{width:64px;text-align:center;font-size:11.5px;font-weight:700;padding:5px 0;border-radius:8px;color:var(--muted)}
+.cat i{display:block;width:22px;height:22px;border-radius:50%;margin:0 auto 3px}
+.cat.on{background:#EEF3F5;color:var(--ink)}
+.pal{width:236px;border-right:1px solid var(--line);padding:10px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;background:#FAFBFB}
+.pal h4{margin:0 0 2px;font-size:12px;color:var(--muted);font-weight:700}
+.board{flex:1;position:relative;background-image:radial-gradient(#D5DDE0 1px,transparent 1px);background-size:18px 18px;overflow:hidden}
+.stack{position:absolute;display:flex;flex-direction:column;gap:2px}
+.blk{display:inline-flex;align-items:center;gap:6px;color:#fff;font-weight:700;font-size:13px;padding:7px 10px;border-radius:5px;width:max-content;box-shadow:inset 0 -2px 0 rgba(0,0,0,.18)}
+.hat{border-radius:16px 16px 5px 5px;padding-top:9px}
+.val{display:inline-flex;align-items:center;gap:5px;border-radius:14px;padding:3px 9px;color:#fff;font-weight:700;font-size:12.5px;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.55)}
+.num{background:#fff;color:var(--ink);border-radius:12px;padding:2px 9px;font-weight:700;font-size:12.5px}
+.hex{display:inline-flex;align-items:center;color:#fff;font-weight:700;font-size:12.5px;padding:3px 14px;clip-path:polygon(10px 0,calc(100% - 10px) 0,100% 50%,calc(100% - 10px) 100%,10px 100%,0 50%);}
+.dd{background:rgba(255,255,255,.25);border-radius:5px;padding:2px 7px}
+.cwrap{display:flex;flex-direction:column;gap:2px;width:max-content}
+.cbody{margin-left:16px;padding:3px 0 3px 0;border-left:0}
+.cend{height:12px;border-radius:5px;width:150px}
+.s-start{background:var(--c-start)} .s-flow{background:var(--c-flow)} .s-judge{background:var(--c-judge)}
+.s-calc{background:var(--c-calc)} .s-score{background:var(--c-score)} .s-kit{background:var(--c-kit)} .s-ai{background:var(--c-ai)}
+.live{position:absolute;right:-64px;font-size:11.5px;font-weight:800;color:#136B32;background:#E9F7EE;border-radius:9px;padding:1px 7px;border:1px solid #9AD6AE}
+.row{position:relative;display:flex;align-items:center}
+.note{position:absolute;font-size:12px;color:var(--muted);background:#FFF8E1;border:1px solid #F0D98A;border-radius:8px;padding:6px 9px;max-width:230px;line-height:1.45}
+.trash{position:absolute;right:14px;bottom:12px;font-size:12px;color:var(--muted);border:1.5px dashed var(--line);border-radius:10px;padding:10px 14px;background:#fff}
+.safe{height:26px;font-size:12px;color:var(--muted);padding:0 14px;display:flex;align-items:center;border-top:1px solid var(--line);background:#fff}
+</style>
+</head>
+<body>
+<div class="menu">
+  <span class="logo">Pendulum Studio</span>
+  <input value="회전 도립 진자 수업">
+  <span class="it">새로 만들기</span><span class="it">불러오기</span><span class="it">저장하기</span><span class="it">↶ ↷</span><span class="it">도움말</span>
+  <span class="sp"></span>
+  <span class="seg"><span>따라 하기</span><span class="on">자유롭게 만들기</span></span>
+  <span class="conn"><span class="dot"></span>키트 연결됨 · 수평 0.3° · 37°C</span>
+</div>
+<div class="guide">
+  활동 순서
+  <b class="done"><i>✓</i>살펴보기</b>
+  <b class="on"><i>2</i>점수 규칙 만들기</b>
+  <b><i>3</i>가르치고 시험하기</b>
+  <span class="hint">학습지 3쪽: 이 규칙으로 진자가 어떻게 움직일지 먼저 적어 보세요</span>
+</div>
+<div class="wrap">
+  <div class="left">
+    <div class="card stage">
+      <span class="tag">실행 화면 · 시뮬레이션</span>
+      <svg viewBox="0 0 430 268" width="430" height="268">
+        <polygon points="60,210 215,150 380,205 225,262" fill="#E6ECEB"/>
+        <rect x="178" y="150" width="74" height="64" rx="8" fill="#22262B"/>
+        <rect x="190" y="112" width="50" height="46" rx="8" fill="#2C3138"/>
+        <ellipse cx="215" cy="112" rx="25" ry="9" fill="#3A8A5A"/>
+        <line x1="215" y1="108" x2="300" y2="92" stroke="#4A4640" stroke-width="9" stroke-linecap="round"/>
+        <line x1="215" y1="108" x2="300" y2="92" stroke="#D6D2CB" stroke-width="5" stroke-linecap="round"/>
+        <line x1="300" y1="92" x2="304" y2="26" stroke="#4A4640" stroke-width="8" stroke-linecap="round"/>
+        <line x1="300" y1="92" x2="304" y2="26" stroke="#D6D2CB" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="304" cy="24" r="8" fill="#C2410C" stroke="#4A4640" stroke-width="2"/>
+        <circle cx="300" cy="92" r="7" fill="#F4F2EE" stroke="#4A4640" stroke-width="2"/>
+      </svg>
+      <div class="chips">
+        <div class="chip"><span class="pill" style="background:#FFC59E">상태</span>진자 높이<b>98</b></div>
+        <div class="chip"><span class="pill" style="background:#F9CCCF">행동</span>모터 힘<b>12</b></div>
+        <div class="chip"><span class="pill" style="background:#FFDC91">보상</span>지금 점수<b>+142</b></div>
+      </div>
+    </div>
+    <div class="card runbar">
+      <span class="go">▶ 시작하기</span><span class="stop">■ 정지하기</span>
+      <span style="flex:1"></span>
+      <span class="seg"><span class="on">시뮬레이션</span><span>실제 키트</span></span>
+    </div>
+    <div class="card sub">
+      <div class="tabs"><span class="on">결과</span><span>키트 상태</span><span>블록 도움말</span></div>
+      <div class="res">
+        <div class="ok">✔ 안전 시험 통과 · 실제 키트에 올릴 수 있어요</div>
+        <div>세우는 데 걸린 시간<b>2.3초</b></div>
+        <div>서 있을 때 모터 힘<b>18 <small>(전에는 41)</small></b></div>
+        <div>팔이 돌아간 정도<b>0.1바퀴 <small>(전에는 1.8)</small></b></div>
+        <div>학습 상태<b>학습완료 · 22초</b></div>
+      </div>
+      <table>
+        <tr><th>기록</th><th>규칙</th><th>시뮬</th><th>키트</th></tr>
+        <tr><td>2회</td><td>높이 + 서면 50 − 힘×0.5</td><td>섬 2.3초</td><td>-</td></tr>
+        <tr><td>1회</td><td>높이만</td><td>섬 2.6초</td><td>섬 2.4초</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="right">
+    <div class="tabs"><span class="on">블록</span><span>그래프</span><span>예시 규칙</span></div>
+    <div class="work">
+      <div class="cats">
+        <div class="cat"><i class="s-start"></i>시작</div>
+        <div class="cat"><i class="s-flow"></i>흐름</div>
+        <div class="cat"><i class="s-judge"></i>판단</div>
+        <div class="cat"><i class="s-calc"></i>계산</div>
+        <div class="cat"><i class="s-score"></i>점수</div>
+        <div class="cat on"><i class="s-kit"></i>키트</div>
+        <div class="cat"><i class="s-ai"></i>인공지능</div>
+      </div>
+      <div class="pal">
+        <h4>키트 · 키트가 재는 값 (0~100)</h4>
+        <span class="val s-kit">진자 높이 값</span>
+        <span class="val s-kit">진자 빠르기 값</span>
+        <span class="val s-kit">팔 빠르기 값</span>
+        <span class="val s-kit">모터 힘 값</span>
+        <h4 style="margin-top:8px">각도 (도)</h4>
+        <span class="val s-kit">진자 기울기 값</span>
+        <span class="val s-kit">팔 각도 값</span>
+        <h4 style="margin-top:8px">판단</h4>
+        <span class="hex s-kit">진자가 똑바로 섰는가?</span>
+        <span class="hex s-kit">팔이 제자리에 있는가?</span>
+      </div>
+      <div class="board">
+        <div class="stack" style="left:26px;top:22px">
+          <span class="blk hat s-score">매 순간 점수 매기기</span>
+          <div class="row"><span class="blk s-score">점수에 <span class="val s-kit">진자 높이 값</span> 만큼 더하기</span><span class="live">+98</span></div>
+          <div class="cwrap">
+            <span class="blk s-flow">만일 <span class="hex s-kit">진자가 똑바로 섰는가?</span> (이)라면</span>
+            <div class="cbody"><div class="row"><span class="blk s-score">점수에 <span class="num">50</span> 만큼 더하기</span><span class="live">+50</span></div></div>
+            <span class="blk cend s-flow"></span>
+          </div>
+          <div class="row"><span class="blk s-score">점수에서 <span class="val s-calc"><span class="val s-kit">모터 힘 값</span> x <span class="num">0.5</span></span> 만큼 빼기</span><span class="live" style="color:#B42318;background:#FDECEA;border-color:#F3B4AD">−6</span></div>
+        </div>
+        <div class="stack" style="left:26px;top:268px">
+          <span class="blk hat s-start">▶ 시작하기 버튼을 클릭했을 때</span>
+          <span class="blk s-ai">학습 조건 <span class="dd">세대 ▾</span> 을(를) <span class="num">24</span> (으)로 바꾸기</span>
+          <span class="blk s-ai">내 점수 규칙으로 정책 학습하기</span>
+          <span class="blk s-ai"><span class="num">10</span> 초 동안 시험하기</span>
+        </div>
+        <div class="note" style="left:430px;top:30px">실행 중에는 블록마다 지금 받는 점수가 옆에 보입니다. 어느 블록이 점수를 올리고 깎는지 바로 알 수 있어요.</div>
+        <div class="note" style="left:360px;top:300px">규칙 점검: 똑바로 섰을 때 점수가 매달렸을 때보다 높습니다 ✔</div>
+        <div class="trash">🗑 여기로 끌면 버립니다</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="safe">팔이 너무 빨리 돌거나 진자가 계속 돌면 키트가 스스로 멈춥니다. 이 안전 동작은 끌 수 없습니다.</div>
+</body>
+</html>

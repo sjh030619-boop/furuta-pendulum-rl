@@ -1,0 +1,191 @@
+{
+ "LQR+energy": {
+  "recovery_grid": 0.632,
+  "recovery_grid_mean_hold": 0.6903199999999999,
+  "impulse": {
+   "2": 1.0,
+   "4": 0.6,
+   "6": 1.0,
+   "8": 1.0,
+   "10": 0.0,
+   "12": 0.0
+  },
+  "sensor": {
+   "ideal": 1.0,
+   "12bit": 1.0,
+   "12bit + 20ms delay": 0.0,
+   "12bit + diff vel": 0.0,
+   "12bit + diff vel + 20ms": 0.0,
+   "0.5deg noise + 20ms": 0.022222222222222223,
+   "1.0deg noise + 40ms": 0.0
+  }
+ },
+ "crossq_s0": {
+  "recovery_grid": 1.0,
+  "recovery_grid_mean_hold": 1.0,
+  "impulse": {
+   "2": 1.0,
+   "4": 1.0,
+   "6": 1.0,
+   "8": 1.0,
+   "10": 1.0,
+   "12": 1.0
+  },
+  "sensor": {
+   "ideal": 1.0,
+   "12bit": 1.0,
+   "12bit + 20ms delay": 1.0,
+   "12bit + diff vel": 1.0,
+   "12bit + diff vel + 20ms": 0.0,
+   "0.5deg noise + 20ms": 0.4222222222222222,
+   "1.0deg noise + 40ms": 0.0
+  }
+ },
+ "ppo_s0": {
+  "recovery_grid": 1.0,
+  "recovery_grid_mean_hold": 1.0,
+  "impulse": {
+   "2": 1.0,
+   "4": 1.0,
+   "6": 1.0,
+   "8": 1.0,
+   "10": 1.0,
+   "12": 1.0
+  },
+  "sensor": {
+   "ideal": 1.0,
+   "12bit": 1.0,
+   "12bit + 20ms delay": 0.0,
+   "12bit + diff vel": 1.0,
+   "12bit + diff vel + 20ms": 0.0,
+   "0.5deg noise + 20ms": 0.0,
+   "1.0deg noise + 40ms": 0.0
+  }
+ },
+ "ppo_s1": {
+  "recovery_grid": 0.976,
+  "recovery_grid_mean_hold": 0.9894400000000001,
+  "impulse": {
+   "2": 1.0,
+   "4": 1.0,
+   "6": 1.0,
+   "8": 1.0,
+   "10": 1.0,
+   "12": 1.0
+  },
+  "sensor": {
+   "ideal": 1.0,
+   "12bit": 1.0,
+   "12bit + 20ms delay": 0.5333333333333333,
+   "12bit + diff vel": 1.0,
+   "12bit + diff vel + 20ms": 0.0,
+   "0.5deg noise + 20ms": 0.6,
+   "1.0deg noise + 40ms": 0.0
+  }
+ },
+ "sac_s0": {
+  "recovery_grid": 1.0,
+  "recovery_grid_mean_hold": 1.0,
+  "impulse": {
+   "2": 1.0,
+   "4": 1.0,
+   "6": 1.0,
+   "8": 1.0,
+   "10": 1.0,
+   "12": 1.0
+  },
+  "sensor": {
+   "ideal": 1.0,
+   "12bit": 1.0,
+   "12bit + 20ms delay": 0.0,
+   "12bit + diff vel": 1.0,
+   "12bit + diff vel + 20ms": 0.0,
+   "0.5deg noise + 20ms": 0.0,
+   "1.0deg noise + 40ms": 0.0
+  }
+ },
+ "sac_s1": {
+  "recovery_grid": 1.0,
+  "recovery_grid_mean_hold": 1.0,
+  "impulse": {
+   "2": 1.0,
+   "4": 1.0,
+   "6": 1.0,
+   "8": 1.0,
+   "10": 1.0,
+   "12": 1.0
+  },
+  "sensor": {
+   "ideal": 1.0,
+   "12bit": 1.0,
+   "12bit + 20ms delay": 0.0,
+   "12bit + diff vel": 1.0,
+   "12bit + diff vel + 20ms": 0.0,
+   "0.5deg noise + 20ms": 0.0,
+   "1.0deg noise + 40ms": 0.0
+  }
+ },
+ "td3_s0": {
+  "recovery_grid": 1.0,
+  "recovery_grid_mean_hold": 1.0,
+  "impulse": {
+   "2": 1.0,
+   "4": 1.0,
+   "6": 1.0,
+   "8": 1.0,
+   "10": 1.0,
+   "12": 1.0
+  },
+  "sensor": {
+   "ideal": 1.0,
+   "12bit": 1.0,
+   "12bit + 20ms delay": 0.0,
+   "12bit + diff vel": 1.0,
+   "12bit + diff vel + 20ms": 0.0,
+   "0.5deg noise + 20ms": 0.0,
+   "1.0deg noise + 40ms": 0.0
+  }
+ },
+ "tqc_s0": {
+  "recovery_grid": 1.0,
+  "recovery_grid_mean_hold": 1.0,
+  "impulse": {
+   "2": 1.0,
+   "4": 1.0,
+   "6": 1.0,
+   "8": 1.0,
+   "10": 1.0,
+   "12": 1.0
+  },
+  "sensor": {
+   "ideal": 1.0,
+   "12bit": 1.0,
+   "12bit + 20ms delay": 0.0,
+   "12bit + diff vel": 1.0,
+   "12bit + diff vel + 20ms": 0.0,
+   "0.5deg noise + 20ms": 0.0,
+   "1.0deg noise + 40ms": 0.0
+  }
+ },
+ "tqc_s1": {
+  "recovery_grid": 1.0,
+  "recovery_grid_mean_hold": 1.0,
+  "impulse": {
+   "2": 1.0,
+   "4": 1.0,
+   "6": 1.0,
+   "8": 1.0,
+   "10": 1.0,
+   "12": 1.0
+  },
+  "sensor": {
+   "ideal": 1.0,
+   "12bit": 1.0,
+   "12bit + 20ms delay": 0.0,
+   "12bit + diff vel": 1.0,
+   "12bit + diff vel + 20ms": 0.0,
+   "0.5deg noise + 20ms": 0.0,
+   "1.0deg noise + 40ms": 0.0
+  }
+ }
+}

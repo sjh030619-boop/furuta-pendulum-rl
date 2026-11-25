@@ -1,0 +1,21 @@
+{
+ "t_up": 0.96,
+ "final_upright": 1.0,
+ "tau_peak": 0.9944624900817871,
+ "arm_range_deg": [
+  0.0,
+  287.4320710768534
+ ],
+ "w_arm_peak": 13.850685360133772,
+ "w_pend_peak": 17.393925195552715,
+ "swings": 32,
+ "frames": 151,
+ "fps": 25.0,
+ "seconds": 6.0,
+ "mb": 0.986382,
+ "controller": "SAC 지연 대응 정책 · 지연 20 ms",
+ "policy": "C:\\Users\\JH\\Downloads\\Furuta_rev18b_MuJoCo (2)\\rl\\rev11\\sac_rev11_delay.zip",
+ "al0": 0.0,
+ "delay_ms": 20.0,
+ "hist": 2
+}

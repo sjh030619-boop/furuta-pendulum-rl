@@ -1,0 +1,218 @@
+{
+ "cfg": "ppo_d",
+ "algo": "ppo",
+ "seed": 0,
+ "tag": "screen",
+ "budget": 900.0,
+ "stopped": "budget",
+ "t_stop": 900.0,
+ "steps": 3582784,
+ "fps": 3980,
+ "eval_s": 130.9,
+ "full_strict": 0,
+ "full_loose": 0,
+ "per": {
+  "nom": 0,
+  "J_lo": 0,
+  "J_hi": 0,
+  "fric_lo": 0,
+  "fric_hi": 0,
+  "k_lo": 0,
+  "k_hi": 0,
+  "kt_lat": 0
+ },
+ "hold_iq": 0.76591375,
+ "hold_du": 0.21669259643060562,
+ "hold_rms_deg": 95.9107664162794,
+ "points": [
+  {
+   "t": 30.0,
+   "steps": 120192,
+   "strict": 0,
+   "eval_s": 4.6
+  },
+  {
+   "t": 60.0,
+   "steps": 229568,
+   "strict": 0,
+   "eval_s": 3.7
+  },
+  {
+   "t": 90.0,
+   "steps": 337024,
+   "strict": 0,
+   "eval_s": 5.5
+  },
+  {
+   "t": 120.0,
+   "steps": 453120,
+   "strict": 0,
+   "eval_s": 5.5
+  },
+  {
+   "t": 150.1,
+   "steps": 553664,
+   "strict": 0,
+   "eval_s": 3.8
+  },
+  {
+   "t": 180.1,
+   "steps": 663872,
+   "strict": 0,
+   "eval_s": 5.1
+  },
+  {
+   "t": 210.1,
+   "steps": 781568,
+   "strict": 0,
+   "eval_s": 5.1
+  },
+  {
+   "t": 240.1,
+   "steps": 884032,
+   "strict": 0,
+   "eval_s": 3.3
+  },
+  {
+   "t": 270.3,
+   "steps": 1007680,
+   "strict": 0,
+   "eval_s": 4.7
+  },
+  {
+   "t": 300.3,
+   "steps": 1126656,
+   "strict": 0,
+   "eval_s": 4.8
+  },
+  {
+   "t": 330.3,
+   "steps": 1233408,
+   "strict": 0,
+   "eval_s": 3.0
+  },
+  {
+   "t": 360.3,
+   "steps": 1360384,
+   "strict": 0,
+   "eval_s": 5.3
+  },
+  {
+   "t": 390.3,
+   "steps": 1481728,
+   "strict": 0,
+   "eval_s": 4.6
+  },
+  {
+   "t": 420.3,
+   "steps": 1592320,
+   "strict": 0,
+   "eval_s": 3.6
+  },
+  {
+   "t": 450.3,
+   "steps": 1723456,
+   "strict": 0,
+   "eval_s": 3.9
+  },
+  {
+   "t": 480.3,
+   "steps": 1854016,
+   "strict": 0,
+   "eval_s": 3.8
+  },
+  {
+   "t": 510.3,
+   "steps": 1984768,
+   "strict": 0,
+   "eval_s": 3.6
+  },
+  {
+   "t": 540.3,
+   "steps": 2142464,
+   "strict": 0,
+   "eval_s": 3.3
+  },
+  {
+   "t": 570.3,
+   "steps": 2268480,
+   "strict": 0,
+   "eval_s": 4.5
+  },
+  {
+   "t": 600.3,
+   "steps": 2381120,
+   "strict": 0,
+   "eval_s": 3.6
+  },
+  {
+   "t": 630.4,
+   "steps": 2503296,
+   "strict": 0,
+   "eval_s": 4.3
+  },
+  {
+   "t": 660.4,
+   "steps": 2635392,
+   "strict": 0,
+   "eval_s": 3.5
+  },
+  {
+   "t": 690.4,
+   "steps": 2777152,
+   "strict": 0,
+   "eval_s": 3.6
+  },
+  {
+   "t": 720.4,
+   "steps": 2898880,
+   "strict": 0,
+   "eval_s": 6.1
+  },
+  {
+   "t": 750.6,
+   "steps": 2990144,
+   "strict": 0,
+   "eval_s": 5.7
+  },
+  {
+   "t": 780.6,
+   "steps": 3110848,
+   "strict": 0,
+   "eval_s": 5.0
+  },
+  {
+   "t": 810.6,
+   "steps": 3224512,
+   "strict": 0,
+   "eval_s": 3.8
+  },
+  {
+   "t": 840.8,
+   "steps": 3350592,
+   "strict": 0,
+   "eval_s": 5.7
+  },
+  {
+   "t": 870.9,
+   "steps": 3465280,
+   "strict": 0,
+   "eval_s": 3.0
+  },
+  {
+   "t": 900.0,
+   "steps": 3582784,
+   "strict": 0,
+   "eval_s": 4.9
+  }
+ ],
+ "config": {
+  "n_envs": 64,
+  "std0": 0.3,
+  "n_steps": 128,
+  "batch_size": 2048,
+  "n_epochs": 6,
+  "learning_rate": 0.0003,
+  "gamma": 0.995
+ }
+}

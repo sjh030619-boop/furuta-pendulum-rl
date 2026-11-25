@@ -1,0 +1,50 @@
+{
+ "algo": "ppo",
+ "seed": 0,
+ "device": "cpu",
+ "n_envs": 24,
+ "budget": 30.0,
+ "train_time": 30.000131399952807,
+ "total_wall": 30.397079499962274,
+ "steps": 352320,
+ "gamma": 0.99,
+ "net": [
+  64,
+  64
+ ],
+ "armature": 0.005,
+ "task": "swingup",
+ "ctrl_hz": 50.0,
+ "timestep": 0.002,
+ "decim": 10,
+ "episode_steps": 250,
+ "tag": "vsubproc24",
+ "setup_time": 18.52,
+ "calib_ms_before": 31.7,
+ "calib_ms_after": 27.0,
+ "own_cpu_share": 0.933,
+ "fps": 11743,
+ "threads": 1,
+ "kw_patch": null,
+ "vec": "subproc",
+ "points": [
+  {
+   "ret": -488.56777086431583,
+   "ret_min": -490.1788149945759,
+   "upright": 0.0,
+   "settled": 0.0,
+   "success": 0.0,
+   "t": 0.0,
+   "steps": 0
+  },
+  {
+   "ret": -58.97207200400811,
+   "ret_min": -73.51587565558269,
+   "upright": 0.016800000000000002,
+   "settled": 0.0,
+   "success": 0.0,
+   "t": 30.0,
+   "steps": 352320
+  }
+ ]
+}

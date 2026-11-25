@@ -1,0 +1,296 @@
+{
+ "algo": "ppo",
+ "seed": 0,
+ "budget": 1500.0,
+ "setup_s": 14.1,
+ "train_s": 1500.1,
+ "eval_s": 81.5,
+ "steps": 16404504,
+ "fps": 10935,
+ "calib_ms_before": 28.0,
+ "calib_ms_after": 32.5,
+ "t_pass": 960.4,
+ "t_sust": 960.4,
+ "min_after_pass": 5,
+ "final_full": {
+  "nom": {
+   "strict": 5,
+   "loose": 16,
+   "t_hold_med": 2.92,
+   "ret": 606.0092640694581,
+   "terminated": 0
+  },
+  "J_lo": {
+   "strict": 8,
+   "loose": 16,
+   "t_hold_med": 3.29,
+   "ret": 615.0706147256806,
+   "terminated": 0
+  },
+  "J_hi": {
+   "strict": 2,
+   "loose": 16,
+   "t_hold_med": 4.57,
+   "ret": 589.74089579453,
+   "terminated": 0
+  },
+  "fric_lo": {
+   "strict": 16,
+   "loose": 16,
+   "t_hold_med": 2.88,
+   "ret": 645.335604295542,
+   "terminated": 0
+  },
+  "fric_hi": {
+   "strict": 9,
+   "loose": 15,
+   "t_hold_med": 4.76,
+   "ret": 347.1019911261484,
+   "terminated": 0
+  },
+  "k_lo": {
+   "strict": 11,
+   "loose": 16,
+   "t_hold_med": 3.42,
+   "ret": 574.9185997709342,
+   "terminated": 0
+  },
+  "k_hi": {
+   "strict": 16,
+   "loose": 16,
+   "t_hold_med": 2.7700000000000005,
+   "ret": 626.5996903249361,
+   "terminated": 0
+  },
+  "kt_lat": {
+   "strict": 2,
+   "loose": 16,
+   "t_hold_med": 3.4400000000000004,
+   "ret": 575.8135830524152,
+   "terminated": 0
+  },
+  "total_strict": 69,
+  "total_loose": 127
+ },
+ "points": [
+  {
+   "t": 0.0,
+   "steps": 0,
+   "strict": 0,
+   "loose": 0,
+   "ret": -1143.5,
+   "term": 0
+  },
+  {
+   "t": 60.0,
+   "steps": 677664,
+   "strict": 0,
+   "loose": 0,
+   "ret": -145.0,
+   "term": 0
+  },
+  {
+   "t": 120.0,
+   "steps": 1353072,
+   "strict": 0,
+   "loose": 0,
+   "ret": -251.1,
+   "term": 0
+  },
+  {
+   "t": 180.0,
+   "steps": 2029680,
+   "strict": 0,
+   "loose": 1,
+   "ret": 89.7,
+   "term": 0
+  },
+  {
+   "t": 240.0,
+   "steps": 2703984,
+   "strict": 0,
+   "loose": 0,
+   "ret": 44.8,
+   "term": 0
+  },
+  {
+   "t": 300.1,
+   "steps": 3373080,
+   "strict": 0,
+   "loose": 0,
+   "ret": 326.7,
+   "term": 0
+  },
+  {
+   "t": 360.1,
+   "steps": 4042776,
+   "strict": 1,
+   "loose": 16,
+   "ret": 538.6,
+   "term": 0
+  },
+  {
+   "t": 420.3,
+   "steps": 4718616,
+   "strict": 0,
+   "loose": 16,
+   "ret": 558.4,
+   "term": 0
+  },
+  {
+   "t": 480.3,
+   "steps": 5394168,
+   "strict": 7,
+   "loose": 14,
+   "ret": 526.0,
+   "term": 0
+  },
+  {
+   "t": 540.3,
+   "steps": 6069144,
+   "strict": 5,
+   "loose": 16,
+   "ret": 555.6,
+   "term": 0
+  },
+  {
+   "t": 600.3,
+   "steps": 6745224,
+   "strict": 1,
+   "loose": 16,
+   "ret": 574.3,
+   "term": 0
+  },
+  {
+   "t": 660.3,
+   "steps": 7421448,
+   "strict": 1,
+   "loose": 16,
+   "ret": 583.4,
+   "term": 0
+  },
+  {
+   "t": 720.3,
+   "steps": 8095080,
+   "strict": 0,
+   "loose": 16,
+   "ret": 587.8,
+   "term": 0
+  },
+  {
+   "t": 780.3,
+   "steps": 8767944,
+   "strict": 0,
+   "loose": 16,
+   "ret": 583.6,
+   "term": 0
+  },
+  {
+   "t": 840.4,
+   "steps": 9443352,
+   "strict": 1,
+   "loose": 16,
+   "ret": 598.7,
+   "term": 0
+  },
+  {
+   "t": 900.4,
+   "steps": 10115760,
+   "strict": 1,
+   "loose": 16,
+   "ret": 588.1,
+   "term": 0
+  },
+  {
+   "t": 960.4,
+   "steps": 10788888,
+   "strict": 16,
+   "loose": 16,
+   "ret": 602.8,
+   "term": 0
+  },
+  {
+   "t": 1020.4,
+   "steps": 11430984,
+   "strict": 15,
+   "loose": 16,
+   "ret": 603.1,
+   "term": 0
+  },
+  {
+   "t": 1080.4,
+   "steps": 12093456,
+   "strict": 15,
+   "loose": 16,
+   "ret": 600.9,
+   "term": 0
+  },
+  {
+   "t": 1140.4,
+   "steps": 12692184,
+   "strict": 15,
+   "loose": 16,
+   "ret": 603.7,
+   "term": 0
+  },
+  {
+   "t": 1200.4,
+   "steps": 13305288,
+   "strict": 16,
+   "loose": 16,
+   "ret": 605.4,
+   "term": 0
+  },
+  {
+   "t": 1260.4,
+   "steps": 13941792,
+   "strict": 5,
+   "loose": 16,
+   "ret": 600.8,
+   "term": 0
+  },
+  {
+   "t": 1320.4,
+   "steps": 14641416,
+   "strict": 7,
+   "loose": 16,
+   "ret": 610.5,
+   "term": 0
+  },
+  {
+   "t": 1380.4,
+   "steps": 15201576,
+   "strict": 5,
+   "loose": 16,
+   "ret": 609.7,
+   "term": 0
+  },
+  {
+   "t": 1440.4,
+   "steps": 15803832,
+   "strict": 14,
+   "loose": 16,
+   "ret": 603.8,
+   "term": 0
+  },
+  {
+   "t": 1500.1,
+   "steps": 16404504,
+   "strict": 5,
+   "loose": 16,
+   "ret": 606.0,
+   "term": 0
+  }
+ ],
+ "config": {
+  "n_steps": 256,
+  "batch_size": 1024,
+  "n_epochs": 10,
+  "learning_rate": 0.0003,
+  "gae_lambda": 0.95,
+  "clip_range": 0.2,
+  "ent_coef": 0.0,
+  "vf_coef": 0.5,
+  "n_envs": 24
+ }
+}

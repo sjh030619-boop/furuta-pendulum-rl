@@ -1,0 +1,88 @@
+{
+ "cfg": "ppo_a",
+ "algo": "ppo",
+ "seed": 0,
+ "tag": "cont",
+ "budget": 1200.0,
+ "stopped": "rule",
+ "resume": "runs_stage1/ppo_s0_final.zip",
+ "subproc": true,
+ "t_stop": 240.4,
+ "steps": 18494568,
+ "fps": 76944,
+ "eval_s": 26.4,
+ "full_strict": 119,
+ "full_loose": 128,
+ "per": {
+  "nom": 16,
+  "J_lo": 16,
+  "J_hi": 16,
+  "fric_lo": 16,
+  "fric_hi": 9,
+  "k_lo": 14,
+  "k_hi": 16,
+  "kt_lat": 16
+ },
+ "hold_iq": 0.23578524999999997,
+ "hold_du": 0.029918132103376224,
+ "hold_rms_deg": 0.7244835034932153,
+ "points": [
+  {
+   "t": 30.0,
+   "steps": 16686048,
+   "strict": 22,
+   "eval_s": 3.6
+  },
+  {
+   "t": 60.0,
+   "steps": 16910688,
+   "strict": 27,
+   "eval_s": 2.7
+  },
+  {
+   "t": 90.0,
+   "steps": 17171472,
+   "strict": 23,
+   "eval_s": 3.6
+  },
+  {
+   "t": 120.1,
+   "steps": 17455152,
+   "strict": 23,
+   "eval_s": 2.7
+  },
+  {
+   "t": 150.2,
+   "steps": 17719344,
+   "strict": 26,
+   "eval_s": 3.7
+  },
+  {
+   "t": 180.2,
+   "steps": 18011088,
+   "strict": 26,
+   "eval_s": 3.6
+  },
+  {
+   "t": 210.4,
+   "steps": 18223152,
+   "strict": 30,
+   "eval_s": 2.9
+  },
+  {
+   "t": 240.4,
+   "steps": 18494568,
+   "strict": 30,
+   "eval_s": 3.6
+  }
+ ],
+ "config": {
+  "n_envs": 24,
+  "std0": 1.0,
+  "n_steps": 256,
+  "batch_size": 1024,
+  "n_epochs": 10,
+  "learning_rate": 0.0003,
+  "gamma": 0.99
+ }
+}

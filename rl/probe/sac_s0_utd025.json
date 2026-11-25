@@ -1,0 +1,75 @@
+{
+ "algo": "sac",
+ "seed": 0,
+ "device": "cpu",
+ "n_envs": 8,
+ "budget": 120.0,
+ "train_time": 120.01291989997844,
+ "total_wall": 123.38419559999602,
+ "steps": 63488,
+ "gamma": 0.99,
+ "net": [
+  64,
+  64
+ ],
+ "armature": 0.005,
+ "task": "swingup",
+ "ctrl_hz": 50.0,
+ "timestep": 0.002,
+ "decim": 10,
+ "episode_steps": 250,
+ "tag": "utd025",
+ "fps": 529,
+ "threads": 1,
+ "kw_patch": {
+  "gradient_steps": 2
+ },
+ "vec": "dummy",
+ "points": [
+  {
+   "ret": -325.9293167391202,
+   "ret_min": -333.2532583098876,
+   "upright": 0.0,
+   "settled": 0.0,
+   "success": 0.0,
+   "t": 0.0,
+   "steps": 0
+  },
+  {
+   "ret": 287.22710755638593,
+   "ret_min": 284.7935095366223,
+   "upright": 0.844,
+   "settled": 1.0,
+   "success": 1.0,
+   "t": 30.002,
+   "steps": 17840
+  },
+  {
+   "ret": 299.6093047966852,
+   "ret_min": 299.19029119571127,
+   "upright": 0.8528,
+   "settled": 1.0,
+   "success": 1.0,
+   "t": 60.009,
+   "steps": 32680
+  },
+  {
+   "ret": 299.26641418250773,
+   "ret_min": 299.08999536504746,
+   "upright": 0.8544,
+   "settled": 1.0,
+   "success": 1.0,
+   "t": 90.009,
+   "steps": 48224
+  },
+  {
+   "ret": 299.2113664312341,
+   "ret_min": 298.8420920366418,
+   "upright": 0.852,
+   "settled": 1.0,
+   "success": 1.0,
+   "t": 120.013,
+   "steps": 63488
+  }
+ ]
+}

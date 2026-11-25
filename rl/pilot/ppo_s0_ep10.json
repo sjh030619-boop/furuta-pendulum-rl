@@ -1,0 +1,46 @@
+{
+ "algo": "ppo",
+ "seed": 0,
+ "device": "cpu",
+ "n_envs": 32,
+ "budget": 25.0,
+ "train_time": 25.02194090001285,
+ "total_wall": 29.069922800001223,
+ "steps": 33440,
+ "gamma": 0.99,
+ "net": [
+  64,
+  64
+ ],
+ "armature": 0.005,
+ "task": "swingup",
+ "ctrl_hz": 50.0,
+ "episode_steps": 250,
+ "tag": "ep10",
+ "fps": 1336,
+ "threads": 1,
+ "kw_patch": {
+  "n_epochs": 10
+ },
+ "vec": "dummy",
+ "points": [
+  {
+   "ret": -488.56777897153734,
+   "ret_min": -490.1788149950161,
+   "upright": 0.0,
+   "settled": 0.0,
+   "success": 0.0,
+   "t": 0.0,
+   "steps": 0
+  },
+  {
+   "ret": -193.5923696172688,
+   "ret_min": -194.73316989282603,
+   "upright": 0.0,
+   "settled": 0.0,
+   "success": 0.0,
+   "t": 25.022,
+   "steps": 33440
+  }
+ ]
+}

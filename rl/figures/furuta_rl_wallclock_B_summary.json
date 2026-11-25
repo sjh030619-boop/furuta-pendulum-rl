@@ -1,0 +1,202 @@
+{
+ "budget": 180.0,
+ "seeds": 4,
+ "metrics": {
+  "ppo": {
+   "n_seeds": 4,
+   "t_solve": [
+    40.5,
+    45.5,
+    45.5,
+    40.5
+   ],
+   "t_total": [
+    57.260000000000005,
+    60.64,
+    60.65,
+    55.32
+   ],
+   "setup": 15.467500000000001,
+   "n_solved": 4,
+   "t_solve_med": 43.0,
+   "t_total_med": 58.95,
+   "final_success": 1.0,
+   "final_ret": 301.48063629636187,
+   "seed_spread": 0.027700831024930747,
+   "drawdown": 9.84810783135218,
+   "drawdown_pct": 1.2460573936822517,
+   "fps": 13761,
+   "steps": 2477664,
+   "device": "cpu",
+   "n_envs": 24
+  },
+  "a2c": {
+   "n_seeds": 4,
+   "t_solve": [
+    125.5,
+    125.5,
+    130.5,
+    120.5
+   ],
+   "t_total": [
+    140.37,
+    140.24,
+    144.94,
+    135.37
+   ],
+   "setup": 14.729999999999999,
+   "n_solved": 4,
+   "t_solve_med": 125.5,
+   "t_total_med": 140.305,
+   "final_success": 0.8198630136986301,
+   "final_ret": 245.20694526542553,
+   "seed_spread": 0.21606648199445982,
+   "drawdown": 72.1067885937806,
+   "drawdown_pct": 9.490058249045694,
+   "fps": 18552,
+   "steps": 3339450,
+   "device": "cpu",
+   "n_envs": 24
+  },
+  "sac": {
+   "n_seeds": 4,
+   "t_solve": [
+    15.5,
+    20.5,
+    20.5,
+    15.5
+   ],
+   "t_total": [
+    19.2,
+    24.240000000000002,
+    24.2,
+    19.28
+   ],
+   "setup": 3.73,
+   "n_solved": 4,
+   "t_solve_med": 18.0,
+   "t_total_med": 21.740000000000002,
+   "final_success": 1.0,
+   "final_ret": 298.968445584369,
+   "seed_spread": 0.0332409972299169,
+   "drawdown": 47.82025780555614,
+   "drawdown_pct": 7.049203528990709,
+   "fps": 1795,
+   "steps": 323238,
+   "device": "cpu",
+   "n_envs": 8
+  },
+  "td3": {
+   "n_seeds": 4,
+   "t_solve": [
+    85.5,
+    90.5,
+    35.5,
+    35.5
+   ],
+   "t_total": [
+    89.21,
+    94.21,
+    39.19,
+    39.2
+   ],
+   "setup": 3.7024999999999997,
+   "n_solved": 4,
+   "t_solve_med": 60.5,
+   "t_total_med": 64.205,
+   "final_success": 0.7054794520547946,
+   "final_ret": 226.26949064524453,
+   "seed_spread": 0.8033240997229917,
+   "drawdown": 871.074927998401,
+   "drawdown_pct": 132.85194694227377,
+   "fps": 2691,
+   "steps": 484526,
+   "device": "cpu",
+   "n_envs": 8
+  },
+  "ddpg": {
+   "n_seeds": 4,
+   "t_solve": [
+    30.5,
+    20.5,
+    25.5,
+    175.5
+   ],
+   "t_total": [
+    34.2,
+    24.23,
+    29.23,
+    179.22
+   ],
+   "setup": 3.72,
+   "n_solved": 4,
+   "t_solve_med": 28.0,
+   "t_total_med": 31.715000000000003,
+   "final_success": 0.791095890410959,
+   "final_ret": 211.0829363918101,
+   "seed_spread": 0.8642659279778393,
+   "drawdown": 727.9564838963742,
+   "drawdown_pct": 108.92908966212693,
+   "fps": 2685,
+   "steps": 483504,
+   "device": "cpu",
+   "n_envs": 8
+  },
+  "tqc": {
+   "n_seeds": 4,
+   "t_solve": [
+    45.5,
+    50.5,
+    45.5,
+    40.5
+   ],
+   "t_total": [
+    49.23,
+    54.18,
+    49.21,
+    44.19
+   ],
+   "setup": 3.7025,
+   "n_solved": 4,
+   "t_solve_med": 45.5,
+   "t_total_med": 49.22,
+   "final_success": 0.9554794520547946,
+   "final_ret": 280.1787025481944,
+   "seed_spread": 0.11080332409972299,
+   "drawdown": 158.292614103345,
+   "drawdown_pct": 23.3421066479735,
+   "fps": 749,
+   "steps": 134998,
+   "device": "cpu",
+   "n_envs": 8
+  },
+  "crossq": {
+   "n_seeds": 4,
+   "t_solve": [
+    40.5,
+    50.5,
+    65.5,
+    50.5
+   ],
+   "t_total": [
+    44.19,
+    54.2,
+    69.24,
+    54.23
+   ],
+   "setup": 3.7150000000000003,
+   "n_solved": 4,
+   "t_solve_med": 50.5,
+   "t_total_med": 54.215,
+   "final_success": 1.0,
+   "final_ret": 302.8312154464529,
+   "seed_spread": 0.11080332409972299,
+   "drawdown": 149.6032652410241,
+   "drawdown_pct": 21.91226069605055,
+   "fps": 429,
+   "steps": 77340,
+   "device": "cpu",
+   "n_envs": 8
+  }
+ }
+}
