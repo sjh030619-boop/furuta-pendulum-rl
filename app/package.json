@@ -1,6 +1,6 @@
 {
   "name": "pendulum-studio",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "교육용 회전 도립 진자 키트 강화학습 앱",
   "main": "main.js",
   "scripts": {

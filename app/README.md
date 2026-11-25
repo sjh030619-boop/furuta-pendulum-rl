@@ -50,7 +50,7 @@ node s2r/check_app_learning.js            # 예시 규칙 고쳐 배우기
 npm run dist
 ```
 
-`app/dist/PendulumStudio-Setup-0.1.0.exe` (약 84 MB)가 만들어집니다. 받는 쪽은 Python도 Node도
+`app/dist/PendulumStudio-Setup-0.2.0.exe` (약 84 MB)가 만들어집니다. 받는 쪽은 Python도 Node도
 설치할 필요가 없습니다. 같이 보낼 안내문은 `app/설치_안내.md` 에 있습니다.
 
 - 아이콘은 `build/icon.ico`. 외부 그림 파일 대신 `build/make_icon.py` 가 크기별로 따로 그립니다
